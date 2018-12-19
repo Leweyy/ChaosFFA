@@ -1,0 +1,17 @@
+#include "infiSTAR_AdminMenu.hpp"
+
+disabledAI = 1;
+respawn = 3;
+respawndelay = 1;
+
+class Header
+{
+	gameType = RPG;
+	minPlayers = 4;
+	maxPlayers = 120;
+};
+
+class CfgFunctions
+{
+	#include "Functions.hpp"
+};

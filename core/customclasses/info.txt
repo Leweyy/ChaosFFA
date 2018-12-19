@@ -1,0 +1,66 @@
+
+// class template
+_CC_TEMPLATE = [["",["","","",""]],["",["","","","","","","","","","","","","",""]],["",[]],"","","",["",["","","",""]],["",["","","",""]],["",["","","",""]],["","","","",""],[]];
+profileNamespace setVariable ["CC_1",_CC_TEMPLATE];
+
+//sorting the return from fn_get_class
+_uniform = class select 0 select 0;
+_uniformItems = class select 0 select 1;
+_vest = class select 1 select 0;
+_vestItems = class select 1 select 1;
+_backpack = class select 2 select 0;
+_backpackItems = _backpack select 1;
+_helmet = class select 3;
+_facewear = class select 4;
+_binoclear = class select 5;
+_primary = class select 6 select 0;
+_primaryAttachments = _primary select 1;
+_primaryMag = _primary select 2;
+_secondary = class select 7 select 0;
+_secondaryAttachments = _secondary select 1;
+_secondaryMag = _secondary select 2;
+_handgun = class select 8 select 0;
+_handgunAttachments = _handgun select 1;
+_handgunMag = _handgun select 2;
+
+	// tests
+
+	["CC_1", "uniform", "U_B_CombatUniform_mcam_tshirt"] call cc_fnc_editClassById;
+	["CC_1", "uniformitems", ["FirstAidKit","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","Chemlight_green"] ] call cc_fnc_editClassById;
+	["CC_1", "vest", "V_PlateCarrierGL_rgr" ] call cc_fnc_editClassById;
+	["CC_1", "vestitems", ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","B_IR_Grenade","B_IR_Grenade","SmokeShell","SmokeShellGreen","Chemlight_green"] ] call cc_fnc_editClassById;
+	["CC_1", "backpack", "B_HMG_01_weapon_F" ] call cc_fnc_editClassById;
+	["CC_1", "backpackitems", ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","B_IR_Grenade","B_IR_Grenade","SmokeShell","SmokeShellGreen","Chemlight_green"] ] call cc_fnc_editClassById;
+	["CC_1", "headgear", "H_HelmetB_light" ] call cc_fnc_editClassById;
+	["CC_1", "facewear", "I_AM_GOGGLES" ] call cc_fnc_editClassById;
+	["CC_1", "binocular", "I_AM_BINOS" ] call cc_fnc_editClassById;
+	["CC_1", "primary", "I_AM_A_PRIMARY_GUN" ] call cc_fnc_editClassById;
+	["CC_1", "primaryattachments", ["LRPS","SILENCER"] ] call cc_fnc_editClassById;
+	["CC_1", "primarymag", "" ] call cc_fnc_editClassById;
+	["CC_1", "secondary", "I_AM_A_SECONDARY_GUN" ] call cc_fnc_editClassById;
+	["CC_1", "secondaryattachments", ["LRPS","SILENCER"] ] call cc_fnc_editClassById;
+	["CC_1", "secondarymag", "" ] call cc_fnc_editClassById;
+	["CC_1", "handgun", "I_AM_A_HANDGUN_GUN" ] call cc_fnc_editClassById;
+	["CC_1", "handgunattachments", ["LRPS","SILENCER"] ] call cc_fnc_editClassById;
+	["CC_1", "handgunmag", "" ] call cc_fnc_editClassById;
+
+	["CC_2", "uniform", "U_B_CombatUniform_mcam_tshirt"] call cc_fnc_editClassById;
+	["CC_2", "uniformitems", ["FirstAidKit","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","Chemlight_green"] ] call cc_fnc_editClassById;
+	["CC_2", "vest", "V_PlateCarrierGL_rgr" ] call cc_fnc_editClassById;
+	["CC_2", "vestitems", ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","B_IR_Grenade","B_IR_Grenade","SmokeShell","SmokeShellGreen","Chemlight_green"] ] call cc_fnc_editClassById;
+	["CC_2", "backpack", "B_HMG_01_weapon_F" ] call cc_fnc_editClassById;
+	["CC_2", "backpackitems", ["30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","30Rnd_65x39_caseless_mag","16Rnd_9x21_Mag","16Rnd_9x21_Mag","HandGrenade","HandGrenade","B_IR_Grenade","B_IR_Grenade","SmokeShell","SmokeShellGreen","Chemlight_green"] ] call cc_fnc_editClassById;
+	["CC_2", "headgear", "H_HelmetB_light" ] call cc_fnc_editClassById;
+	["CC_2", "facewear", "I_AM_GOGGLES" ] call cc_fnc_editClassById;
+	["CC_2", "binocular", "I_AM_BINOS" ] call cc_fnc_editClassById;
+	["CC_2", "primary", "I_AM_A_PRIMARY_GUN" ] call cc_fnc_editClassById;
+	["CC_2", "primaryattachments", ["LRPS","SILENCER"] ] call cc_fnc_editClassById;
+	["CC_2", "primarymag", "" ] call cc_fnc_editClassById;
+	["CC_2", "secondary", "I_AM_A_SECONDARY_GUN" ] call cc_fnc_editClassById;
+	["CC_2", "secondaryattachments", ["LRPS","SILENCER"] ] call cc_fnc_editClassById;
+	["CC_2", "secondarymag", "" ] call cc_fnc_editClassById;
+	["CC_2", "handgun", "I_AM_A_HANDGUN_GUN" ] call cc_fnc_editClassById;
+	["CC_2", "handgunattachments", ["LRPS","SILENCER"] ] call cc_fnc_editClassById;
+	["CC_2", "handgunmag", "" ] call cc_fnc_editClassById;
+
+
