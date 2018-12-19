@@ -13,13 +13,10 @@
 
 params [
     ["_classId", "", [""]],
-    ["_type","", [""]],
+    ["_type","", ["uniform","uniformitems","vest","vestitems","backpack","headgear"]],
     ["_items","",[[],""]]
 ]
 
-_classId = _this select 0;
-_type = _this select 1;
-_items = _this select 2;
 _classArray = profileNamespace getVariable _classId;
 
 switch (_type) do {
