@@ -18,7 +18,11 @@ params = [
 ];
 
 private _STAFF_UIDS = [
-  "76561198130918050"
+    "76561198130918050",
+    "76561198121632932",
+    "76561198301127636",
+    "76561198095796413",
+    "76561198053353709"
 ];
 
 if (getPlayerUID _unit in _STAFF_UIDS || serverCommandAvailable '#kick' || !isMultiplayer) exitwith{true};
