@@ -27,6 +27,7 @@ class Admin {
     
     class Menu {
         file = "core\admin\menu";
+        class initRelocateObjectiveMenu {};
     }
 
 };
