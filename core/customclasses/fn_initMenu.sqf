@@ -36,7 +36,7 @@ _extendedCustomClasses = customClasses + ["CC_4","CC_5","CC_6","CC_7","CC_8","CC
 	_ctrl = classes;
 	
 	_uniform = _classLoadout select 0 select 0;
-	_uniformItems = _classLoadout select 0 select 1;
+	_uniformItems = _uniform select 1;
 	_vest = _classLoadout select 1 select 0;
 	_vestItems = _classLoadout select 1 select 1;
 	_backpack = _classLoadout select 2 select 0;
