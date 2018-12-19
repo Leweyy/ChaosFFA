@@ -19,10 +19,14 @@ class Nodes {
 
 class Admin {
     tag = "admin";
-
+    file = "core\admin";
+    
+    class Functions {
+        class isPlayerAdmin {};
+    }
+    
     class Menu {
         file = "core\admin\menu";
-
     }
 
 };
@@ -33,6 +37,16 @@ class Lobby {
     class Menu {
         file = "core\lobby";
         class initMenu {};
+    }
+
+};
+
+class Player {
+    tag = "player";
+
+    class Functions {
+        file = "core\player";
+        class nameTags {};
     }
 
 };
