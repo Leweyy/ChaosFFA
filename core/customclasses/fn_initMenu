@@ -1,31 +1,39 @@
-	mainmenudisplay = findDisplay 46 createDisplay "RscDisplayEmpty";
+mainmenudisplay = findDisplay 46 createDisplay "RscDisplayEmpty";
 
-	title = mainmenudisplay ctrlCreate ["RscText", 102];
-	title ctrlSetPosition [
-		SafeZoneX + (825 / 1920) * SafeZoneW,
-		SafeZoneY + (240 / 1080) * SafeZoneH,
-		(270 / 1920) * SafeZoneW,
-		(30 / 1080) * SafeZoneH
-	];
-	title ctrlSetBackgroundColor [0.75,0,0,1];
-	title ctrlSetText "Objective Selection";
-	title ctrlSetFont "PuristaLight";
-	title ctrlCommit 0;
+title = mainmenudisplay ctrlCreate ["RscText", 102];
+title ctrlSetPosition [
+	SafeZoneX + (825 / 1920) * SafeZoneW,
+	SafeZoneY + (240 / 1080) * SafeZoneH,
+	(270 / 1920) * SafeZoneW,
+	(30 / 1080) * SafeZoneH
+];
+title ctrlSetBackgroundColor [0.75,0,0,1];
+title ctrlSetText "Objective Selection";
+title ctrlSetFont "PuristaLight";
+title ctrlCommit 0;
 
-	classes = mainmenudisplay ctrlCreate ["RscTreeSearch", 3009];
-	classes ctrlSetPosition [
-		SafeZoneX + (825 / 1920) * SafeZoneW,
-		SafeZoneY + (270 / 1080) * SafeZoneH,
-		(270 / 1920) * SafeZoneW,
-		(600 / 1080) * SafeZoneH
-	];
-	classes ctrlSetFont "PuristaLight";
-	classes ctrlSetFontHeight 0.035;
-	classes ctrlSetBackgroundColor [0.3,0.3,0.3,1];
-	classes ctrlSetEventHandler ["MouseButtonDblClick",'[] call setObj;'];
-	classes ctrlCommit 0;
-  
-  _customClasses = ["CC_1","CC_2","CC_3"];
-  _extendedCustomClasses = customClasses + ["CC_4","CC_5","CC_6","CC_7","CC_8","CC_9","CC_10"];
-  
-  if 
+classes = mainmenudisplay ctrlCreate ["RscTreeSearch", 3009];
+classes ctrlSetPosition [
+	SafeZoneX + (825 / 1920) * SafeZoneW,
+	SafeZoneY + (270 / 1080) * SafeZoneH,
+	(270 / 1920) * SafeZoneW,
+	(600 / 1080) * SafeZoneH
+];
+classes ctrlSetFont "PuristaLight";
+classes ctrlSetFontHeight 0.035;
+classes ctrlSetBackgroundColor [0.3,0.3,0.3,1];
+classes ctrlSetEventHandler ["MouseButtonDblClick",'[] call setObj;'];
+classes ctrlCommit 0;
+
+_customClasses = [["CC_1","Custom Class 1"],["CC_2","Custom Class 2"],["CC_3","Custom Class 3"]];
+_extendedCustomClasses = customClasses + ["CC_4","CC_5","CC_6","CC_7","CC_8","CC_9","CC_10"];
+
+{
+	_classId = _x select 0;
+	_className = _x select 1;
+	_classLoadout = [_classId] call cc_fnc_getClassById;
+	
+	_add = classes tvAdd [[],_className];
+	classes tvSetData [[_forEachIndex,_add],_classId];
+} forEach _customClasses;
+
