@@ -1,5 +1,5 @@
-_STAFF_UIDS = ["76561198130918050"];
-if (getPlayerUID player in _STAFF_UIDS || serverCommandAvailable '#kick' || !isMultiplayer) then {
+_isAdmin = [player] call admin_fnc_isPlayerAdmin;
+if (_isAdmin) then {
 	player addAction ["Admin Menu", { call fn_initAdminMenu }];
 };
 
