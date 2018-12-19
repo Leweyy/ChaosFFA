@@ -12,13 +12,13 @@
 		Array: map markers
 */
 
-nodeMarkers = [];
+private _nodeMarkers = [];
 {
 
 	if ( _x find "node" >= 0) then{
-		nodeMarkers pushBack _x;
+		_nodeMarkers pushBack _x;
 	};
 
 } foreach allMapMarkers;
 
-nodeMarkers;
+_nodeMarkers;
