@@ -5,6 +5,7 @@ class CustomClasses {
         class editClassById {};
         class getClassById {};
         class clearClassById {};
+        class initMenu {};
     }
 };
 
