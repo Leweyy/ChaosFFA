@@ -10,6 +10,7 @@
         0: classId  - class id / profile variable name e.g CC_1
 */
 
-_classId = _this select 0;
+params = ["_classId"]
+
 _CC_TEMPLATE = [["",[]],["",[]],["",[]],"","","",["",["","","",""],""],["",["","","",""],""],["",["","","",""],""],[],[]];
 profileNamespace setVariable [_classId,_CC_TEMPLATE];
