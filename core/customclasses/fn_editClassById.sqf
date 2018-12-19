@@ -11,6 +11,12 @@
         2: items    - the item to be added
 */
 
+params [
+    ["_classId", "", [""]],
+    ["_type","", [""]],
+    ["_items","",[[],""]]
+]
+
 _classId = _this select 0;
 _type = _this select 1;
 _items = _this select 2;
