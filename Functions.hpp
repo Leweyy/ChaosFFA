@@ -39,6 +39,7 @@ class Lobby {
     class Menu {
         file = "core\lobby";
         class initMenu {};
+        class initTeleportMenu {};
     }
 
 };

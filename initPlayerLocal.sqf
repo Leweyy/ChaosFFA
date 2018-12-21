@@ -2,6 +2,6 @@
 
 _isAdmin = [player] call admin_fnc_isPlayerAdmin;
 if (_isAdmin) then {
-	player addAction ["Admin Menu", { call admin_fnc_initRelocateObjectiveMenu }];
+	player addAction ["<t color='#FF0000'>[Admin]</t> Menu", { call admin_fnc_initRelocateObjectiveMenu }];
 };
 

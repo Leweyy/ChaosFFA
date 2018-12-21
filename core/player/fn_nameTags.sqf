@@ -35,7 +35,7 @@ addMissionEventHandler ["Draw3D", {
         };
 
         // dont draw marker on self
-        if (_unit == player)exitWith{};
+        //if (_unit == player)exitWith{};
 
         if ((_side == side player) && (getPlayerUID _unit != "") && ((player distance _unit) < 50)) then {
 

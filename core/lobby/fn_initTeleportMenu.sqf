@@ -1,6 +1,6 @@
-relocateObjMenu = findDisplay 46 createDisplay "RscDisplayEmpty";
+teleportdisplay = findDisplay 46 createDisplay "RscDisplayEmpty";
 
-title = relocateObjMenu ctrlCreate ["RscText", 102];
+title = teleportdisplay ctrlCreate ["RscText", 102];
 title ctrlSetPosition [
 	SafeZoneX + (825 / 1920) * SafeZoneW,
 	SafeZoneY + (240 / 1080) * SafeZoneH,
@@ -9,11 +9,11 @@ title ctrlSetPosition [
 ];
 title ctrlSetBackgroundColor [0.75,0,0,1];
 title ctrlSetFontHeight 0.045;
-title ctrlSetText "Objective Selection";
+title ctrlSetText "Teleport";
 title ctrlSetFont "PuristaLight";
 title ctrlCommit 0;
 
-nodeList = relocateObjMenu ctrlCreate ["RscTreeSearch", 3009];
+nodeList = teleportdisplay ctrlCreate ["RscTreeSearch", 3009];
 nodeList ctrlSetPosition [
 	SafeZoneX + (825 / 1920) * SafeZoneW,
 	SafeZoneY + (270 / 1080) * SafeZoneH,
@@ -23,7 +23,7 @@ nodeList ctrlSetPosition [
 nodeList ctrlSetFont "PuristaLight";
 nodeList ctrlSetFontHeight 0.035;
 nodeList ctrlSetBackgroundColor [0.3,0.3,0.3,1];
-nodeList ctrlSetEventHandler ["MouseButtonDblClick",'[] call setObj;'];
+nodeList ctrlSetEventHandler ["MouseButtonDblClick",'[] call tpAroundObj;'];
 nodeList ctrlCommit 0;
 
 _nodeMarkers = call nodes_fnc_getNodes;
@@ -78,19 +78,16 @@ tvExpandAll nodeList;
 
 } forEach _nodeMarkers;
 
-setObj = {
+tpAroundObj = {
 
 	_ctrl = nodeList;
 	_index = tvCurSel _ctrl;
 	_selectedNodeMarkerId = _ctrl tvData _index;
 	_selectedNodeName = _ctrl tvText _index;
+	
+	_markerPos = getMarkerPos _selectedNodeMarkerId;
+	_randomPos = [_markerPos, 25, 250, 0, 0, 0.7, 0, [], []] call BIS_fnc_findSafePos;
+	player setPos _randomPos;
 
-	//set old marker to red
-	_oldObjective = currentObjective;
-	_oldObjective setMarkerColor "ColorRed";
-
-	//set new public var and set marker to blue
-	currentObjective = _selectedNodeMarkerId;
-	publicVariable "currentObjective";
-	currentObjective setMarkerColor "ColorBlue";
+	teleportdisplay closeDisplay 0;
 }

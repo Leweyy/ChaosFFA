@@ -1,22 +1,23 @@
-mainmenudisplay = findDisplay 46 createDisplay "RscDisplayEmpty";
+customclassesdisplay = findDisplay 46 createDisplay "RscDisplayEmpty";
 
-title = mainmenudisplay ctrlCreate ["RscText", 102];
+title = customclassesdisplay ctrlCreate ["RscText", 102];
 title ctrlSetPosition [
-	SafeZoneX + (800 / 1920) * SafeZoneW,
+	SafeZoneX + (785 / 1920) * SafeZoneW,
 	SafeZoneY + (240 / 1080) * SafeZoneH,
-	(300 / 1920) * SafeZoneW,
+	(350 / 1920) * SafeZoneW,
 	(30 / 1080) * SafeZoneH
 ];
 title ctrlSetBackgroundColor [0.75,0,0,1];
+title ctrlSetFontHeight 0.045;
 title ctrlSetText "Custom Classes";
 title ctrlSetFont "PuristaLight";
 title ctrlCommit 0;
 
-classes = mainmenudisplay ctrlCreate ["RscTreeSearch", 3009];
+classes = customclassesdisplay ctrlCreate ["RscTreeSearch", 3009];
 classes ctrlSetPosition [
-	SafeZoneX + (800 / 1920) * SafeZoneW,
+	SafeZoneX + (785 / 1920) * SafeZoneW,
 	SafeZoneY + (270 / 1080) * SafeZoneH,
-	(300 / 1920) * SafeZoneW,
+	(350 / 1920) * SafeZoneW,
 	(600 / 1080) * SafeZoneH
 ];
 classes ctrlSetFont "PuristaLight";
