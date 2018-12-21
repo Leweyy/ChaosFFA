@@ -13,9 +13,7 @@
       Boolean
 */
 
-params = [
-  ["_unit", objNull, [objNull]]
-];
+params ["_unit"];
 
 private _STAFF_UIDS = [
     "76561198130918050",

@@ -13,9 +13,9 @@
 
 params [
     ["_classId", "", [""]],
-    ["_type","", ["uniform","uniformitems","vest","vestitems","backpack","headgear"]],
+    ["_type","", [""]],
     ["_items","",[[],""]]
-]
+];
 
 _classArray = profileNamespace getVariable _classId;
 
@@ -53,25 +53,17 @@ switch (_type) do {
     case 'primaryattachments': {
         _classArray set [10, _items];
     };
-    case 'primarymag': {
+    case 'secondary': {
         _classArray set [11, _items];
     };
-    case 'secondary': {
+    case 'secondaryattachments': {
         _classArray set [12, _items];
     };
-    case 'secondaryattachments': {
+    case 'handgun': {
         _classArray set [13, _items];
     };
-    case 'secondarymag': {
+    case 'handgunattachments': {
         _classArray set [14, _items];
     };
-    case 'handgun': {
-        _classArray set [15, _items];
-    };
-    case 'handgunattachments': {
-        _classArray set [16, _items];
-    };
-    case 'handgunmag': {
-        _classArray set [17, _items];
-    };
+
 };

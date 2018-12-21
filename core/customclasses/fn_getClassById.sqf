@@ -14,8 +14,11 @@ _classId = _this select 0;
 _classArray = profileNamespace getVariable _classId;
 
 // Create a class template
-_cc_template = [["",["","","",""]],["",["","","","","","","","","","","","","",""]],["",[]],"","","",["",["","","",""]],["",["","","",""]],["",["","","",""]],["","","","",""],[]];
-if (isNil "_classArray") exitWith{_cc_template};
+_cc_template = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
+if (isNil "_classArray") then {
+    profileNamespace setVariable [_classId,_cc_template];
+    _classArray = _cc_template;
+};
 
 _classArray;
 

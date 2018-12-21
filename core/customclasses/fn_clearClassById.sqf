@@ -10,7 +10,7 @@
         0: classId  - class id / profile variable name e.g CC_1
 */
 
-params = ["_classId"]
+params ["_classId"];
 
-_CC_TEMPLATE = [["",[]],["",[]],["",[]],"","","",["",["","","",""],""],["",["","","",""],""],["",["","","",""],""],[],[]];
+_CC_TEMPLATE = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
 profileNamespace setVariable [_classId,_CC_TEMPLATE];

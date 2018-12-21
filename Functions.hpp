@@ -20,9 +20,9 @@ class Nodes {
 
 class Admin {
     tag = "admin";
-    file = "core\admin";
-    
+
     class Functions {
+        file = "core\admin";
         class isPlayerAdmin {};
     }
     
@@ -49,6 +49,16 @@ class Player {
     class Functions {
         file = "core\player";
         class nameTags {};
+    }
+
+};
+
+class Utils {
+    tag = "utils";
+
+    class Functions {
+        file = "core";
+        class getDisplayName {};
     }
 
 };
