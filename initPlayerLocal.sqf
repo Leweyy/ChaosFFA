@@ -1,7 +1,12 @@
+waitUntil {!isNull player && player == player};
+
+//init name tags
 [] call player_fnc_nameTags;
 
-_isAdmin = [player] call admin_fnc_isPlayerAdmin;
-if (_isAdmin) then {
-	player addAction ["<t color='#FF0000'>[Admin]</t> Menu", { call admin_fnc_initRelocateObjectiveMenu }];
-};
+//Add player actions
+[] call player_fnc_addActions;
 
+//handle player respawn
+player addEventHandler ["Respawn", {
+	[] call player_fnc_addActions
+}];

@@ -38,6 +38,7 @@ tvExpandAll nodeList;
 {
 
 	_currMarker = _x;
+	_currentObjective = currentObjective;
 	_containsStringSyrta = ["syrta", _currMarker] call BIS_fnc_inString;
 	_containsStringSofia = ["sofia", _currMarker] call BIS_fnc_inString;
 	_containsStringPyrgos = ["pyrgos", _currMarker] call BIS_fnc_inString;
@@ -49,33 +50,52 @@ tvExpandAll nodeList;
 		_add = nodeList tvAdd [[0],markerText _x];
 		nodeList tvSetData [[0,_add],_x];
 		nodeList tvSetPicture [[0,_add],_icon];
-		nodeList tvSetPictureColor [[0,_add], [1,0,0,1]];
+		if (_currMarker == _currentObjective ) then {
+			nodeList tvSetPictureColor [[0,_add], [0,0,1,1]];
+		} else {
+			nodeList tvSetPictureColor [[0,_add], [1,0,0,1]];
+		}
 	};
 	if(_containsStringRebel) then {
 		_add = nodeList tvAdd [[1],markerText _x];
 		nodeList tvSetData [[1,_add],_x];
 		nodeList tvSetPicture [[1,_add],_icon];
-		nodeList tvSetPictureColor [[1,_add], [1,0,0,1]];
+		if (_currMarker == _currentObjective ) then {
+			nodeList tvSetPictureColor [[1,_add], [0,0,1,1]];
+		} else {
+			nodeList tvSetPictureColor [[1,_add], [1,0,0,1]];
+		}
 	};
 	if(_containsStringSofia) then {
 		_add = nodeList tvAdd [[2],markerText _x];
 		nodeList tvSetData [[2,_add],_x];
 		nodeList tvSetPicture [[2,_add],_icon];
-		nodeList tvSetPictureColor [[2,_add], [1,0,0,1]];
+		if (_currMarker == _currentObjective ) then {
+			nodeList tvSetPictureColor [[2,_add], [0,0,1,1]];
+		} else {
+			nodeList tvSetPictureColor [[2,_add], [1,0,0,1]];
+		}	
 	};
 	if(_containsStringNeochori) then {
 		_add = nodeList tvAdd [[3],markerText _x];
 		nodeList tvSetData [[3,_add],_x];
 		nodeList tvSetPicture [[3,_add],_icon];
-		nodeList tvSetPictureColor [[3,_add], [1,0,0,1]];
+		if (_currMarker == _currentObjective ) then {
+			nodeList tvSetPictureColor [[3,_add], [0,0,1,1]];
+		} else {
+			nodeList tvSetPictureColor [[3,_add], [1,0,0,1]];
+		}
 	};
 	if(_containsStringPyrgos) then {
 		_add = nodeList tvAdd [[4],markerText _x];
 		nodeList tvSetData [[4,_add],_x];
 		nodeList tvSetPicture [[4,_add],_icon];
-		nodeList tvSetPictureColor [[4,_add], [1,0,0,1]];
+		if (_currMarker == _currentObjective ) then {
+			nodeList tvSetPictureColor [[4,_add], [0,0,1,1]];
+		} else {
+			nodeList tvSetPictureColor [[4,_add], [1,0,0,1]];
+		}
 	};
-
 } forEach _nodeMarkers;
 
 setObj = {

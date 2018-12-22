@@ -35,22 +35,24 @@ addMissionEventHandler ["Draw3D", {
         };
 
         // dont draw marker on self
-        //if (_unit == player)exitWith{};
+        if (_unit != player) then {
 
-        if ((_side == side player) && (getPlayerUID _unit != "") && ((player distance _unit) < 50)) then {
+            if ((_side == side player) && (getPlayerUID _unit != "") && ((player distance _unit) < 5)) then {
 
-            drawIcon3D[
-                picon,
-                clr,
-                [visiblePosition _unit select 0, visiblePosition _unit select 1, (getPosATL _unit select 2) + 2],
-                1,
-                1,
-                0,
-                fname,
-                1,
-                0.035,
-                "PuristaSemiBold"
-            ]
+                drawIcon3D[
+                    picon,
+                    clr,
+                    [visiblePosition _unit select 0, visiblePosition _unit select 1, (getPosATL _unit select 2) + 2],
+                    1,
+                    1,
+                    0,
+                    fname,
+                    1,
+                    0.035,
+                    "PuristaSemiBold"
+                ]
+
+            }
 
         }
 

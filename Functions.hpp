@@ -50,6 +50,8 @@ class Player {
     class Functions {
         file = "core\player";
         class nameTags {};
+        class tpPlayerToObjective {};
+        class addActions {};
     }
 
 };
@@ -64,3 +66,11 @@ class Utils {
 
 };
 
+class Server {
+    tag = "server";
+
+    class Functions {
+        file = "core\server";
+        class initGameMode {};
+    }
+}
