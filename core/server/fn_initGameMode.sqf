@@ -3,11 +3,15 @@
     Author: Lewey
 
     Description:
-    this script will be run to set up the game mode e.g setting the objective cahanging marker colors 
+    this script will be run to set up the game mode e.g setting the objective cahanging marker colors
+
+    Parameters:
+     0: _preInit | Boolean - only to be used on server start up
 
 */
+params ["_preInit"];
 
-private _possibleObjectivePositions = [] call nodes_fnc_getNodes;
+_possibleObjectivePositions = [] call nodes_fnc_getNodes;
 _randomObjective = selectRandom _possibleObjectivePositions;
 
 // set old objective marker to red
@@ -22,6 +26,9 @@ publicVariable "currentObjective";
 currentObjective setMarkerColor "ColorBlue";
 
 // time before objective changes
-sleep 300;
+if !(isNil "_preInit") exitWith {};
+
 //call self
+sleep 300;
 [] call server_fnc_initGameMode;
+

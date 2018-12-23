@@ -1,17 +1,25 @@
 #include "infiSTAR_AdminMenu.hpp"
-
+#include "maverick\maverick_master.cpp"
+	
 disabledAI = 1;
 respawn = 3;
 respawndelay = 1;
 
 class Header
 {
-	gameType = RPG;
-	minPlayers = 4;
-	maxPlayers = 120;
+	gameType = Sandbox;
+	minPlayers = 1;
+	maxPlayers = 30;
+	disabledAI = 1;
 };
 
 class CfgFunctions
 {
 	#include "Functions.hpp"
+	#include "maverick\maverick_functions_master.cpp"
 };
+
+class RscTitles 
+{
+	#include "maverick\introcam\dialogs\title_status.hpp"
+}

@@ -52,6 +52,7 @@ class Player {
         class nameTags {};
         class tpPlayerToObjective {};
         class addActions {};
+        class initPlayer {};
     }
 
 };

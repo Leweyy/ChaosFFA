@@ -62,11 +62,11 @@ _defaultClass = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
 		_handgun = _classLoadout select 13;
 		_handgunAttachments = _classLoadout select 14;
 
-		diag_log format["%1 | %2 | _uniform | %3","cc_fnc_initMenu.sqf", _classId, _uniform];
+		//diag_log format["%1 | %2 | _uniform | %3","cc_fnc_initMenu.sqf", _classId, _uniform];
 		//UNIFORM
 		if !(_uniform isEqualTo "" || _uniform isEqualTo []) then {
 			_addUniform = _ctrl tvAdd [[_forEachIndex], [_uniform] call utils_fnc_getDisplayName];
-			diag_log format["%1 | %2 | _uniformItems | %3","cc_fnc_initMenu.sqf", _classId, _uniformItems];
+			//diag_log format["%1 | %2 | _uniformItems | %3","cc_fnc_initMenu.sqf", _classId, _uniformItems];
 			if !(_uniformItems isEqualTo "" || _uniformItems isEqualTo []) then {
 				{
 					_ctrl tvAdd [[_classNumber,0], [_x] call utils_fnc_getDisplayName];
@@ -76,10 +76,10 @@ _defaultClass = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
 
 
 		//VEST
-		diag_log format["%1 | %2 | _vest | %3","cc_fnc_initMenu.sqf", _classId, _vest];
+		//diag_log format["%1 | %2 | _vest | %3","cc_fnc_initMenu.sqf", _classId, _vest];
 		if !(_vest isEqualTo "" || _vest isEqualTo []) then {
 			_addVest = _ctrl tvAdd [[_forEachIndex], [_vest] call utils_fnc_getDisplayName];
-			diag_log format["%1 | %2 | _vestItems | %3","cc_fnc_initMenu.sqf", _classId, _vestItems];
+			//diag_log format["%1 | %2 | _vestItems | %3","cc_fnc_initMenu.sqf", _classId, _vestItems];
 			if !(_vestItems isEqualTo "" || _vestItems isEqualTo []) then {
 				{
 					_ctrl tvAdd [[_classNumber,1], [_x] call utils_fnc_getDisplayName];
@@ -88,10 +88,10 @@ _defaultClass = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
 		};
 
 		//BACKPACK
-		diag_log format["%1 | %2 | _backpack | %3","cc_fnc_initMenu.sqf", _classId, _backpack];
+		//diag_log format["%1 | %2 | _backpack | %3","cc_fnc_initMenu.sqf", _classId, _backpack];
 		if !(_backpack isEqualTo "" || _backpack isEqualTo []) then {
 			_addBackpack = _ctrl tvAdd [[_forEachIndex], [_backpack] call utils_fnc_getDisplayName];
-			diag_log format["%1 | %2 | _backpackItems | %3","cc_fnc_initMenu.sqf", _classId, _backpackItems];
+			//diag_log format["%1 | %2 | _backpackItems | %3","cc_fnc_initMenu.sqf", _classId, _backpackItems];
 			if !(_backpackItems isEqualTo "" || _backpackItems isEqualTo []) then {
 				{
 					_ctrl tvAdd [[_classNumber,2], [_x] call utils_fnc_getDisplayName];
@@ -100,23 +100,23 @@ _defaultClass = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
 		};
 
 
-		diag_log format["%1 | %2 | _helmet | %3","cc_fnc_initMenu.sqf", _classId, _helmet];
+		//diag_log format["%1 | %2 | _helmet | %3","cc_fnc_initMenu.sqf", _classId, _helmet];
 		if !(_helmet isEqualTo "" || _helmet isEqualTo []) then {
 			_addHelmet = _ctrl tvAdd [[_forEachIndex], [_helmet] call utils_fnc_getDisplayName];
 		};
-		diag_log format["%1 | %2 | _facewear | %3","cc_fnc_initMenu.sqf", _classId, _facewear];
+		//diag_log format["%1 | %2 | _facewear | %3","cc_fnc_initMenu.sqf", _classId, _facewear];
 		if !(_facewear isEqualTo "" || _facewear isEqualTo []) then {
 			_addFacewear = _ctrl tvAdd [[_forEachIndex], [_facewear] call utils_fnc_getDisplayName];
 		};
-		diag_log format["%1 | %2 | _binoclear | %3","cc_fnc_initMenu.sqf", _classId, _binoclear];
+		//diag_log format["%1 | %2 | _binoclear | %3","cc_fnc_initMenu.sqf", _classId, _binoclear];
 		if !(_binoclear isEqualTo "" || _binoclear isEqualTo []) then {
 			_addBinoclear = _ctrl tvAdd [[_forEachIndex], [_binoclear] call utils_fnc_getDisplayName];
 		};		
 
-		diag_log format["%1 | %2 | _primary | %3","cc_fnc_initMenu.sqf", _classId, _primary];
+		//diag_log format["%1 | %2 | _primary | %3","cc_fnc_initMenu.sqf", _classId, _primary];
 		if !(_primary isEqualTo "" || _primary isEqualTo []) then {
 			_addPrimary= _ctrl tvAdd [[_forEachIndex], [_primary] call utils_fnc_getDisplayName];
-			diag_log format["%1 | %2 | _primaryAttachments | %3","cc_fnc_initMenu.sqf", _classId, _primaryAttachments];
+			//diag_log format["%1 | %2 | _primaryAttachments | %3","cc_fnc_initMenu.sqf", _classId, _primaryAttachments];
 			if !(_primaryAttachments isEqualTo "" || _primaryAttachments isEqualTo []) then {
 				{
 					_ctrl tvAdd [[_classNumber,6], [_x] call utils_fnc_getDisplayName];
@@ -125,10 +125,10 @@ _defaultClass = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
 		};
 
 
-		diag_log format["%1 | %2 | _secondary | %3","cc_fnc_initMenu.sqf", _classId, _secondary];
+		//diag_log format["%1 | %2 | _secondary | %3","cc_fnc_initMenu.sqf", _classId, _secondary];
 		if !(_secondary isEqualTo "" || _secondary isEqualTo []) then {
 			_addSecondary = _ctrl tvAdd [[_forEachIndex], [_secondary] call utils_fnc_getDisplayName];
-			diag_log format["%1 | %2 | _secondaryAttachments | %3","cc_fnc_initMenu.sqf", _classId, _secondaryAttachments];
+			//diag_log format["%1 | %2 | _secondaryAttachments | %3","cc_fnc_initMenu.sqf", _classId, _secondaryAttachments];
 			if !(_secondaryAttachments isEqualTo "" || _secondaryAttachments isEqualTo []) then {
 				{
 					_ctrl tvAdd [[_classNumber,7], [_x] call utils_fnc_getDisplayName];
@@ -137,19 +137,16 @@ _defaultClass = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]];
 		};
 
 
-		diag_log format["%1 | %2 | _handgun | %3","cc_fnc_initMenu.sqf", _classId, _handgun];
+		//diag_log format["%1 | %2 | _handgun | %3","cc_fnc_initMenu.sqf", _classId, _handgun];
 		if !(_handgun isEqualTo "" || _handgun isEqualTo []) then {
 			_addHandgun = _ctrl tvAdd [[_forEachIndex], [_handgun] call utils_fnc_getDisplayName ];
-			diag_log format["%1 | %2 | _handgunAttachments | %3","cc_fnc_initMenu.sqf", _classId, _handgunAttachments];
+			//diag_log format["%1 | %2 | _handgunAttachments | %3","cc_fnc_initMenu.sqf", _classId, _handgunAttachments];
 			if !(_handgunAttachments isEqualTo "" || _handgunAttachments isEqualTo []) then {
 				{
 					_ctrl tvAdd [[_classNumber,8], [_x] call utils_fnc_getDisplayName];
 				} forEach _handgunAttachments;
 			};
 		};
-
-
-		systemChat format["%1 - %2",_forEachIndex,_classId]
 
 	};
 
