@@ -1,5 +1,5 @@
 teleportdisplay = findDisplay 46 createDisplay "RscDisplayEmpty";
-
+disableSerialization;
 title = teleportdisplay ctrlCreate ["RscText", 102];
 title ctrlSetPosition [
 	SafeZoneX + (825 / 1920) * SafeZoneW,
@@ -90,4 +90,7 @@ tpAroundObj = {
 	player setPos _randomPos;
 
 	teleportdisplay closeDisplay 0;
+
+	//_text = format["You have been teleported to %1",_selectedNodeName];
+	//[_text, "info", 3] call Utils_fnc_notification;
 }

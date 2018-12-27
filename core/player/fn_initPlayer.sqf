@@ -3,15 +3,13 @@ waitUntil {!isNull player && player == player};
 sleep 1;
 
 //init name tags
-[] call player_fnc_nameTags;
+//[] call player_fnc_nameTags;
 
 //Add player actions
 [] call player_fnc_addActions;
 
-//handle player respawn
-player addEventHandler ["Respawn", {
-	[] call player_fnc_addActions
-}];
+//add player event handlers
+[] call player_fnc_playerEH;
 
 // marker color fix for JIP
 waitUntil {!isNil "currentObjective"};

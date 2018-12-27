@@ -25,6 +25,9 @@ currentObjective = _randomObjective;
 publicVariable "currentObjective";
 currentObjective setMarkerColor "ColorBlue";
 
+//_text = format["Objective is now %1",markerText currentObjective];
+//[_text, "info", 3] call Utils_fnc_notification;
+
 // time before objective changes
 if !(isNil "_preInit") exitWith {};
 

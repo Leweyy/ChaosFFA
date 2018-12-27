@@ -1,5 +1,5 @@
 relocateObjMenu = findDisplay 46 createDisplay "RscDisplayEmpty";
-
+disableSerialization;
 title = relocateObjMenu ctrlCreate ["RscText", 102];
 title ctrlSetPosition [
 	SafeZoneX + (825 / 1920) * SafeZoneW,
@@ -113,4 +113,7 @@ setObj = {
 	currentObjective = _selectedNodeMarkerId;
 	publicVariable "currentObjective";
 	currentObjective setMarkerColor "ColorBlue";
+
+	//_text = format["Objective has been relocated to %1",_selectedNodeName];
+	//[_text, "info", 3] call Utils_fnc_notification;
 }

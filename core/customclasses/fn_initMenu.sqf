@@ -1,5 +1,5 @@
 customclassesdisplay = findDisplay 46 createDisplay "RscDisplayEmpty";
-
+disableSerialization;
 title = customclassesdisplay ctrlCreate ["RscText", 102];
 title ctrlSetPosition [
 	SafeZoneX + (785 / 1920) * SafeZoneW,

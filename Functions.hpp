@@ -53,6 +53,7 @@ class Player {
         class tpPlayerToObjective {};
         class addActions {};
         class initPlayer {};
+        class playerEH {};
     }
 
 };
@@ -63,6 +64,7 @@ class Utils {
     class Functions {
         file = "core";
         class getDisplayName {};
+        class notification {};
     }
 
 };
