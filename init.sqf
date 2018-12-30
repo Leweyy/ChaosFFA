@@ -6,3 +6,6 @@ sleep 1;
 sleep 1;
 [1, "PRESS SPACE TO CONTINUE"] call mav_introcam_fnc_updateCinematicStatus;
 waitUntil {mav_introcam_continue};
+
+//init main menu
+//[] call Lobby_fnc_initMainMenu

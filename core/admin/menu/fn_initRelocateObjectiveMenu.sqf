@@ -114,6 +114,9 @@ setObj = {
 	publicVariable "currentObjective";
 	currentObjective setMarkerColor "ColorBlue";
 
+	adminRelocated = true;
+	publicVariable "adminRelocated";
+
 	//_text = format["Objective has been relocated to %1",_selectedNodeName];
 	//[_text, "info", 3] call Utils_fnc_notification;
 }

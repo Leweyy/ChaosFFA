@@ -9,7 +9,6 @@
      0: _preInit | Boolean - only to be used on server start up
 
 */
-params ["_preInit"];
 
 _possibleObjectivePositions = [] call nodes_fnc_getNodes;
 _randomObjective = selectRandom _possibleObjectivePositions;
@@ -25,13 +24,15 @@ currentObjective = _randomObjective;
 publicVariable "currentObjective";
 currentObjective setMarkerColor "ColorBlue";
 
-//_text = format["Objective is now %1",markerText currentObjective];
-//[_text, "info", 3] call Utils_fnc_notification;
-
-// time before objective changes
-if !(isNil "_preInit") exitWith {};
-
-//call self
 sleep 300;
-[] call server_fnc_initGameMode;
 
+if !(isNil "adminRelocated") then {
+    if (adminRelocated isEqualTo true) then {
+        sleep 300;
+        adminRelocated = false;
+        publicVariable "adminRelocated";
+    };
+};
+
+
+[] call Server_fnc_initGameMode;

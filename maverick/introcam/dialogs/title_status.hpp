@@ -17,6 +17,7 @@ class Chaos_RscText {
     tooltipColorBox[] = {1,1,1,1};
     tooltipColorShade[] = {0,0,0,0.65};
 };
+
 class maverick_dialog_introcam_status {
     idd = 19350;
     movingEnable = 0;

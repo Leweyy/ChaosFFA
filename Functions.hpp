@@ -40,6 +40,7 @@ class Lobby {
         file = "core\lobby";
         class initMenu {};
         class initTeleportMenu {};
+        class initMainMenu {};
     }
 
 };
@@ -75,5 +76,7 @@ class Server {
     class Functions {
         file = "core\server";
         class initGameMode {};
+        class objectiveChanged {};
+        class cleanUp {};
     }
 }

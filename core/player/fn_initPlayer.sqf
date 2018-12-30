@@ -11,6 +11,12 @@ sleep 1;
 //add player event handlers
 [] call player_fnc_playerEH;
 
+//put player in 3rd person 
+player switchCamera "EXTERNAL";
+
+//Disable Fatigue
+player enableFatigue false;
+
 // marker color fix for JIP
 waitUntil {!isNil "currentObjective"};
 currentObjective setMarkerColor "ColorBlue";

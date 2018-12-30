@@ -1,6 +1,9 @@
 #include "infiSTAR_AdminMenu.hpp"
 #include "maverick\maverick_master.cpp"
-	
+
+//dialogs
+#include "dialog\master_dialog.hpp"
+
 disabledAI = 1;
 respawn = 3;
 respawndelay = 1;

@@ -4,13 +4,23 @@ player addEventHandler ["Respawn", {
 
 	// load previous inventory
 	[player, [missionNamespace, "inventory_var"]] call BIS_fnc_loadInventory;
+
+	//put player in 3rd person 
+	player switchCamera "EXTERNAL";
+	
+	//Disable Fatigue
+	player enableFatigue false;
+
+	//init main menu
+	//[] call Lobby_fnc_initMainMenu
 }];
 
 player addEventHandler ["Killed", {
+
 	//save loadout to be reloaded on respawn
 	[player, [missionNamespace, "inventory_var"]] call BIS_fnc_saveInventory;
+	
 }];
-
 
 // On key down stuff earplugs etc 
 waituntil {!isnull (finddisplay 46)};
