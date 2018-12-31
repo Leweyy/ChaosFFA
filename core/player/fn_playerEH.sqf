@@ -22,6 +22,29 @@ player addEventHandler ["Killed", {
 	
 }];
 
+addMissionEventHandler ["EntityKilled",
+{
+	params ["_killed", "_killer", "_instigator"];
+	if (isNull _instigator) then {_instigator = UAVControl vehicle _killer select 0}; // UAV/UGV player operated road kill
+	if (isNull _instigator) then {_instigator = _killer}; // player driven vehicle road kill
+	if (_instigator isEqualTo player) then {
+		_pKills = profileNamespace getVariable "chaos_player_kills";
+		if (isNil "_pKills") then {
+			_pKills = 0
+		};
+		_pKills = pKills + 1;
+		profileNamespace setVariable ["chaos_player_kills", _pKills]
+	};
+	if (_killed isEqualTo player) then {
+		_pDeaths = profileNamespace getVariable "chaos_player_deaths";
+		if (isNil "_pDeaths") then {
+			_pDeaths = 0
+		};
+		_pDeaths = _pDeaths + 1;
+		profileNamespace setVariable ["chaos_player_deaths", _pDeaths]
+	};
+}];
+
 // On key down stuff earplugs etc 
 waituntil {!isnull (finddisplay 46)};
 

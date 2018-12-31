@@ -9,7 +9,7 @@ class chaos_main_menu
     name = "chaos_main_menu";
     movingEnable = 0;
     enableSimulation = true;
-	onUnload = "terminate mapanimloop"
+	onUnload = "terminate mapanimloop";
 	class ControlsBackground
 	{
 		class background
@@ -37,7 +37,8 @@ class chaos_main_menu
 			y = safeZoneY + safeZoneH * 0.025;
 			w = safeZoneW * 0.4;
 			h = safeZoneH * 0.95;
-
+			alphaFadeStartScale = 0;
+			alphaFadeEndScale = 0;
 		};
 		
 	};
@@ -96,10 +97,10 @@ class chaos_main_menu
 		{
 			type = 1;
 			idc = 6705;
-			x = safeZoneX + safeZoneW * 0.950;
-			y = safeZoneY + safeZoneH * 0.975;
-			w = safeZoneW * 0.05;
-			h = safeZoneH * 0.025;
+			x = safeZoneX + safeZoneW * 0.955;
+			y = safeZoneY + safeZoneH * 0.9775;
+			w = safeZoneW * 0.0425;
+			h = safeZoneH * 0.02;
 			style = 0;
 			text = "Spawn";
 			borderSize = 0;
@@ -124,6 +125,38 @@ class chaos_main_menu
 			onButtonClick = "closeDialog 0; [] call player_fnc_tpPlayerToObjective;";
 		};
 
+		class exit
+		{
+			type = 1;
+			idc = 6708;
+			x = safeZoneX + safeZoneW * 0.0025;
+			y = safeZoneY + safeZoneH * 0.9775;
+			w = safeZoneW * 0.0425;
+			h = safeZoneH * 0.02;
+			style = 0;
+			text = "Exit";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,1};
+			colorBackgroundActive[] = {1,0,0,1};
+			colorBackgroundDisabled[] = {0.2,0.2,0.2,1};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0.2,0.2,0.2,1};
+			colorFocused[] = {0.2,0.2,0.2,1};
+			colorShadow[] = {0,0,0,1};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			offsetPressedX = 0;
+			offsetPressedY = 0;
+			offsetX = 0;
+			offsetY = 0;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1.0};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			onButtonClick = "['end1',false,1] call BIS_fnc_endMission;";
+		};
+
 		class chaos_customs_classes
 		{
 			type = 12;
@@ -131,12 +164,22 @@ class chaos_main_menu
 			x = safeZoneX + safeZoneW * -0.00625;
 			y = safeZoneY + safeZoneH * 0.05;
 			w = safeZoneW * 0.2375;
-			h = safeZoneH * 0.925;
+			h = safeZoneH * 0.9;
 			style = 16;
 			colorBackground[] = {0.502,0.502,0.502,1}; // Fill color
 			colorSelect[] = {0.9213,0.0634,0.0634,1}; // Selected item fill color (when multiselectEnabled is 0)
 			colorMarked[] = {0.9213,0.0634,0.0634,1}; // Marked item fill color (when multiselectEnabled is 1)
 			colorMarkedSelected[] = {0.9213,0.0634,0.0634,1}; // Selected item fill color (when multiselectEnabled is 1)
+			colorText[] = {1,1,1,1};
+			colorSelectText[] = {1,1,1,1};
+			colorMarkedText[] = {1,1,1,1};
+			colorBorder[] = {1,1,1,1};
+			colorPicture[] = {1,1,1,1};
+			colorPictureSelected[] = {1,1,1,1};
+			colorPictureDisabled[] = {1,1,1,1};
+			colorPictureRight[] = {1,1,1,1};
+			colorPictureRightSelected[] = {1,1,1,1};
+			colorPictureRightDisabled[] = {1,1,1,1};
 			font = "PuristaMedium";
 			maxHistoryDelay = 0;
 			rowHeight = 0;

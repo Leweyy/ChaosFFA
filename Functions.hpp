@@ -2,6 +2,7 @@ class CustomClasses {
     tag = "cc";
     class Functions {
         file = "core\customclasses";
+        class addCLassesToCtrl {};
         class editClassById {};
         class getClassById {};
         class clearClassById {};
