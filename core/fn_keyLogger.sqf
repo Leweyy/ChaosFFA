@@ -11,7 +11,7 @@
         1: keyCode - code of the key that was pressed
     
     https://community.bistudio.com/wiki/keyName
-    
+    https://community.bistudio.com/wiki/DIK_KeyCodes
 */
 
 params [_unit];
