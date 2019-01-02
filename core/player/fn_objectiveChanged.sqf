@@ -24,3 +24,5 @@ if (alive player) then {
 removeeh = {
 	tpToNewObjHandler = (findDisplay 46) displayRemoveEventHandler ["KeyDown", tpToNewObjHandler];
 }
+
+//update users hud to reflect new objective

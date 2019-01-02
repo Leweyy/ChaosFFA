@@ -56,6 +56,7 @@ class Player {
         class addActions {};
         class initPlayer {};
         class playerEH {};
+        class objectiveChanged {};
     }
 
 };
@@ -77,7 +78,6 @@ class Server {
     class Functions {
         file = "core\server";
         class initGameMode {};
-        class objectiveChanged {};
         class cleanUp {};
     }
 }

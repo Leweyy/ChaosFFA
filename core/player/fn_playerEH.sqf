@@ -22,6 +22,13 @@ player addEventHandler ["Killed", {
 	
 }];
 
+//Attempt to give player a new mag when they reload
+player addEventHandler ["Reloaded", {
+    params ["_unit", "_weapon", "_muzzle", "_newMagazine", "_oldMagazine"];
+	_mag = _oldMagazine select 0;
+    player addItem _mag;
+}];
+
 addMissionEventHandler ["EntityKilled",
 {
 	params ["_killed", "_killer", "_instigator"];
@@ -45,6 +52,9 @@ addMissionEventHandler ["EntityKilled",
 		profileNamespace setVariable ["chaos_player_deaths", _pd]
 	};
 }];
+
+// attempt to watch currentObjective variable to init player teleport to new obj
+"currentObjective" addPublicVariableEventHandler Server_fnc_objectiveChanged;
 
 // On key down stuff earplugs etc 
 waituntil {!isnull (finddisplay 46)};

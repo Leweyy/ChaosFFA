@@ -1,4 +1,6 @@
 //Maverick Introcam init
+//waitUntill {!isNil "currentObjective"};
+
 [] call mav_introcam_fnc_startCinematicCam;
 [0, "LOADING MISSION, PLEASE WAIT"] call mav_introcam_fnc_updateCinematicStatus;
 sleep 1;
