@@ -1,6 +1,30 @@
+/*
+    File: fn_rediectClientToServer.sqf
+    Author: Lewey
+    Description:
+    transfers a player to another server
+    Parameters:
+        0: serverIp - Ip of the desired server
+        1: serverPort - Ip of the desired server
+        2: serverPassword - if server is passworded, server password
+        3: timeout  - timeout in seconds, default 3
+*/
+
+params 
+[
+    ["_serverIp", "127.0.0.1"], 
+    ["_serverPort", "2302"],
+    ["_serverPassword", ""], 
+    ["_functionTimeout", 30]
+];
+
+//Must be remote executed by server
+//if (isServer || !(isRemoteExecuted && remoteExecutedOwner isEqualTo 2) 
+//exitWith {diag_log "Redirect Client > Fail > Must be remote executed from dedicated server"};
+
 // Define server info
-uiNamespace setVariable ["redirectTimeout", diag_ticktime +30];
-uiNamespace setVariable ["redirectInfo", ["127.0.0.1","2302"]];
+uiNamespace setVariable ["redirectTimeout", diag_ticktime + _functionTimeout];
+uiNamespace setVariable ["redirectInfo", [_serverIp,_serverPort,_serverPassword]];
 
 //close all pre existing displays in correct order
 onEachFrame {
