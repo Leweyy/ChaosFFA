@@ -22,7 +22,7 @@ player addEventHandler ["Killed", {
 	
 }];
 
-//Attempt to give player a new mag when they reload
+//Give player a mag when they reload
 player addEventHandler ["Reloaded", {
     params ["_unit", "_weapon", "_muzzle", "_newMagazine", "_oldMagazine"];
 	_mag = _oldMagazine select 0;
@@ -54,7 +54,7 @@ addMissionEventHandler ["EntityKilled",
 }];
 
 // attempt to watch currentObjective variable to init player teleport to new obj
-"currentObjective" addPublicVariableEventHandler Server_fnc_objectiveChanged;
+"currentObjective" addPublicVariableEventHandler Player_fnc_objectiveChanged;
 
 // On key down stuff earplugs etc 
 waituntil {!isnull (finddisplay 46)};
@@ -73,10 +73,7 @@ _keyHandler = (findDisplay 46) displayAddEventHandler ["KeyDown", {
 
 		// Admin Menu
 		case 21: {
-			_isAdmin = [player] call admin_fnc_isPlayerAdmin;
-			if (_isAdmin) then {
-				[] call admin_fnc_initRelocateObjectiveMenu;
-			};
+			[] call player_fnc_initPlayerMenu;
 			_success = true;
 		};
 

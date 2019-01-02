@@ -60,7 +60,7 @@ class chaos_main_menu
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.25);
 			
 		};
-		class title3
+		class chaos_customs_class_title
 		{
 			type = 0;
 			idc = 6706;

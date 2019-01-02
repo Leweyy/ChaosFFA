@@ -1,3 +1,19 @@
+class RscPicture
+{
+	access = 0;
+	type = CT_STATIC;
+	idc = -1;
+	style = 48;//ST_PICTURE
+	colorBackground[] = {0,0,0,0};
+	colorText[] = {1,1,1,1};
+	font = "TahomaB";
+	sizeEx = 0;
+	lineSpacing = 0;
+	text = "";
+	fixedWidth = 0;
+	shadow = 0;
+};
+
 class RscMapControl
 {
 	access = 0;

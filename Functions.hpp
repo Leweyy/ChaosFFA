@@ -57,7 +57,14 @@ class Player {
         class initPlayer {};
         class playerEH {};
         class objectiveChanged {};
-    }
+    };
+
+    class Menu {
+        file = "core\player\menu"
+        class initPlayerMenu {};
+        class initStatsMenu {};
+        class initVehicleMenu {};
+    };
 
 };
 

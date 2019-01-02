@@ -82,11 +82,11 @@ params [_unit];
     "DIK_NUMLOCK",
     "DIK_SCROLL",
     "DIK_RMENU",
-    "DIK_RALT",
+    "DIK_RALT"
 ];
 
 private _keyPotential = [
     "DIK_HOME",
-    "DIK_INSERT",
+    "DIK_INSERT"
 ];
 
