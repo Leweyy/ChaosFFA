@@ -17,7 +17,7 @@ class chaos_player_menu_vehicles
 			colorBackground[] = {0.4,0.4,0.4,1};
 			colorText[] = {1,1,1,1};
 			font = "PuristaMedium";
-			sizeEx = (((((safezoneW/safezoneH)min1.2)/1.2)/25)*1);
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 			
 		};
 		
@@ -113,7 +113,7 @@ class chaos_player_menu_vehicles
 			colorBackground[] = {0.302,0.302,0.302,1};
 			colorText[] = {1,1,1,1};
 			font = "PuristaLight";
-			sizeEx = (((((safezoneW/safezoneH)min1.2)/1.2)/25)*1);
+			sizeEx =(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 			
 		};
 		class vehicle_points

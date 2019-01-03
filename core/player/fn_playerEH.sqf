@@ -41,7 +41,15 @@ addMissionEventHandler ["EntityKilled",
 			_pk = 0
 		};
 		_pk = _pk + 1;
-		profileNamespace setVariable ["chaos_player_kills", _pk]
+		profileNamespace setVariable ["chaos_player_kills", _pk];
+
+		//addvehiclepoint
+		_vp = profileNamespace getVariable "chaos_player_vehicle_points";
+		if (isNil "_vp") then {
+			_vp = 0
+		};
+		_vp = _vp + 1;
+		profileNamespace setVariable ["chaos_player_vehicle_points", _vp];
 	};
 	if (_killed isEqualTo player) then {
 		_pd = profileNamespace getVariable "chaos_player_deaths"; 
@@ -55,6 +63,7 @@ addMissionEventHandler ["EntityKilled",
 
 // attempt to watch currentObjective variable to init player teleport to new obj
 "currentObjective" addPublicVariableEventHandler Player_fnc_objectiveChanged;
+"adminRelocated" addPublicVariableEventHandler Player_fnc_objectiveChanged;
 
 // On key down stuff earplugs etc 
 waituntil {!isnull (finddisplay 46)};
@@ -71,7 +80,7 @@ _keyHandler = (findDisplay 46) displayAddEventHandler ["KeyDown", {
 
     switch (_keyCode) do {
 
-		// Admin Menu
+		// Player menu
 		case 21: {
 			[] call player_fnc_initPlayerMenu;
 			_success = true;

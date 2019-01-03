@@ -105,6 +105,22 @@ class chaos_player_menu_stats
 			
 		};
 		
+		class vehicle_points
+		{
+			type = 0;
+			idc = 6907;
+			x = safeZoneX + safeZoneW * 0.425;
+			y = safeZoneY + safeZoneH * 0.51481482;
+			w = safeZoneW * 0.15;
+			h = safeZoneH * 0.025;
+			style = 0;
+			text = "";
+			colorBackground[] = {0.4,0.4,0.4,1};
+			colorText[] = {1,1,1,1};
+			font = "PuristaLight";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
 	};
 	
 };
