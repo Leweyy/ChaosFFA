@@ -105,6 +105,11 @@ setObj = {
 	_selectedNodeMarkerId = _ctrl tvData _index;
 	_selectedNodeName = _ctrl tvText _index;
 
+	if (adminRelocateTimer > diag_tickTime) exitWith {hint format["Wait %1 seconds before relocating objective again", adminRelocateTimer - diag_tickTime]};
+
+	adminRelocateTimer = diag_tickTime + 10;
+	publicVariable "adminRelocateTimer";
+
 	//set old marker to red
 	_oldObjective = currentObjective;
 	_oldObjective setMarkerColor "ColorRed";
@@ -117,6 +122,9 @@ setObj = {
 	adminRelocated = true;
 	publicVariable "adminRelocated";
 
+	[] call Player_fnc_objectiveChanged;
 	//_text = format["Objective has been relocated to %1",_selectedNodeName];
 	//[_text, "info", 3] call Utils_fnc_notification;
+
+
 }

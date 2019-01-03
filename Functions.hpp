@@ -57,6 +57,7 @@ class Player {
         class initPlayer {};
         class playerEH {};
         class objectiveChanged {};
+        class jumpScript {};
     };
 
     class Menu {

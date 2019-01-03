@@ -73,7 +73,27 @@ spawnvehicle = {
 		_playersChosenVehicle = _vehicleClassName createVehicle position player;
 		_playersChosenVehicle setVariable ["owner",getPlayerUID player];
 		_playersChosenVehicle setVariable ["createdAt",diag_tickTime];
+		_playersChosenVehicle setVariable ["cost",_vehicleCost];
+		_playersChosenVehicle setVariable ["className",_vehicleClassName];
+		player setVariable ["activeVehicle",_playersChosenVehicle];
+		_playersChosenVehicle addEventHandler ["Killed","[] call vehiclerefund"]
 	} else {
 		hint "You do not have enough points to spawn this vehicle, you earn points by getting kills"
 	}
-} 
+};
+
+vehiclerefund = {
+
+	_vehicle = player getVariable "activeVehicle";
+	_refundAmount = _vehicle getVariable "cost";
+	_displayName = getText (configFile >> "CfgVehicles" >> (_vehicle getVariable "className") >> 'displayName');
+	hint format["You %1 was destroyed and you have been refunded %2 points",_displayName,_refundAmount];
+	_vp = profileNamespace getVariable "chaos_player_vehicle_points";
+	if (isNil "_vp") then {
+		_vp = 0
+	};
+	_vp = _vp + _refundAmount;
+	profileNamespace setVariable ["chaos_player_vehicle_points", _vp];
+
+	player setVariable ["activeVehicle",nil];
+}

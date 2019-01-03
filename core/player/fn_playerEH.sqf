@@ -13,6 +13,7 @@ player addEventHandler ["Respawn", {
 
 	//init main menu
 	//[] call Lobby_fnc_initMainMenu
+
 }];
 
 player addEventHandler ["Killed", {
@@ -63,7 +64,6 @@ addMissionEventHandler ["EntityKilled",
 
 // attempt to watch currentObjective variable to init player teleport to new obj
 "currentObjective" addPublicVariableEventHandler Player_fnc_objectiveChanged;
-"adminRelocated" addPublicVariableEventHandler Player_fnc_objectiveChanged;
 
 // On key down stuff earplugs etc 
 waituntil {!isnull (finddisplay 46)};

@@ -19,7 +19,10 @@ player enableFatigue false;
 
 // marker color fix for JIP
 waitUntil {!isNil "currentObjective"};
-currentObjective setMarkerColor "ColorBlue";
+currentObjective setMarkerColorLocal "ColorBlue";
+
+//jump script
+execvm "core\player\fn_jumpScript.sqf";
 
 [0, "CLIENT SET UP COMPLETE"] call mav_introcam_fnc_updateCinematicStatus;
 
