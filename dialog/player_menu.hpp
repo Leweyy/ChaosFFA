@@ -24,39 +24,6 @@ class chaos_player_menu
         class statistics_button
 		{
 			type = 1;
-			idc = 6811;
-			x = safeZoneX + safeZoneW * 0.39;
-			y = safeZoneY + safeZoneH * 0.38981482;
-			w = safeZoneW * 0.05989584;
-			h = safeZoneH * 0.1;
-			style = 0;
-			text = "";
-			borderSize = 0;
-			colorBackground[] = {0.2,0.2,0.2,1};
-			colorBackgroundActive[] = {1,0,0,1};
-			colorBackgroundDisabled[] = {0.2,0.2,0.2,1};
-			colorBorder[] = {0,0,0,0};
-			colorDisabled[] = {0.2,0.2,0.2,1};
-			colorFocused[] = {0.2,0.2,0.2,1};
-			colorShadow[] = {0,0,0,1};
-			colorText[] = {1,1,1,1};
-			font = "PuristaMedium";
-			offsetPressedX = 0;
-			offsetPressedY = 0;
-			offsetX = 0;
-			offsetY = 0;
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
-			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1.0};
-			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
-			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
-			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-			onButtonClick = "closeDialog 0; call player_fnc_initStatsMenu";
-			
-		};
-
-        class vehicles_button
-		{
-			type = 1;
 			idc = 6812;
 			x = safeZoneX + safeZoneW * 0.31;
 			y = safeZoneY + safeZoneH * 0.38981482;
@@ -83,8 +50,39 @@ class chaos_player_menu
 			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
 			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
 			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			onButtonClick = "closeDialog 0; call player_fnc_initStatsMenu";
+		};
+
+        class vehicles_button
+		{
+			type = 1;
+			idc = 6811;
+			x = safeZoneX + safeZoneW * 0.39;
+			y = safeZoneY + safeZoneH * 0.38981482;
+			w = safeZoneW * 0.05989584;
+			h = safeZoneH * 0.1;
+			style = 0;
+			text = "";
+			borderSize = 0;
+			colorBackground[] = {0.2,0.2,0.2,1};
+			colorBackgroundActive[] = {1,0,0,1};
+			colorBackgroundDisabled[] = {0.2,0.2,0.2,1};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0.2,0.2,0.2,1};
+			colorFocused[] = {0.2,0.2,0.2,1};
+			colorShadow[] = {0,0,0,1};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			offsetPressedX = 0;
+			offsetPressedY = 0;
+			offsetX = 0;
+			offsetY = 0;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1.0};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
 			onButtonClick = "closeDialog 0; call player_fnc_initVehicleMenu";
-			
 		};
 
         class admin_button

@@ -33,11 +33,11 @@ class chaos_player_menu_vehicles
 			w = safeZoneW * 0.4;
 			h = safeZoneH * 0.025;
 			style = 0;
-			text = "Main Menu";
+			text = "Vehicle Menu";
 			colorBackground[] = {0.9213,0.0634,0.0634,1};
 			colorText[] = {1,1,1,1};
 			font = "PuristaLight";
-			sizeEx = (((((safezoneW/safezoneH)min1.2)/1.2)/25)*1.25);
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.25);
 			
 		};
 		class vehicle_list
@@ -73,7 +73,7 @@ class chaos_player_menu_vehicles
 		{
 			type = 1;
 			idc = 7004;
-			x = safeZoneX + safeZoneW * 0.65;
+			x = safeZoneX + safeZoneW * 0.6465;
 			y = safeZoneY + safeZoneH * 0.73425926;
 			w = safeZoneW * 0.04635417;
 			h = safeZoneH * 0.02222223;
@@ -89,10 +89,10 @@ class chaos_player_menu_vehicles
 			colorShadow[] = {0.302,0.302,0.302,1};
 			colorText[] = {1,1,1,1};
 			font = "PuristaMedium";
-			offsetPressedX = 0.01;
-			offsetPressedY = 0.01;
-			offsetX = 0.01;
-			offsetY = 0.01;
+			offsetPressedX = 0;
+			offsetPressedY = 0;
+			offsetX = 0;
+			offsetY = 0;
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1.0};
 			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
@@ -106,8 +106,8 @@ class chaos_player_menu_vehicles
 			idc = 7005;
 			x = safeZoneX + safeZoneW * 0.45833334;
 			y = safeZoneY + safeZoneH * 0.25185186;
-			w = safeZoneW * 0.235;
-			h = safeZoneH * 0.46944445;
+			w = safeZoneW * 0.24;
+			h = safeZoneH * 0.475;
 			style = 0;
 			text = "";
 			colorBackground[] = {0.302,0.302,0.302,1};
@@ -129,10 +129,55 @@ class chaos_player_menu_vehicles
 			colorBackground[] = {0.9213,0.0634,0.0634,1};
 			colorText[] = {1,1,1,1};
 			font = "PuristaLight";
-			sizeEx = (((((safezoneW/safezoneH)min1.2)/1.2)/25)*1.25);
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 			
 		};
-		
+
+        class vehicle_info_picture : RscPicture
+		{
+			idc = 7007;
+			x = safeZoneX + safeZoneW * 0.48177084;
+			y = safeZoneY + safeZoneH * 0.3175926;
+			w = safeZoneW * 0.18489584;
+			h = safeZoneH * 0.18888889;
+			text = "";
+			colorText[] = {1,1,1,1};
+            colorBackground[] = {1,1,1,1};
+		};
+
+		class vehicle_info_displayname
+		{
+			type = 0;
+			idc = 7008;
+			x = safeZoneX + safeZoneW * 0.5525;
+			y = safeZoneY + safeZoneH * 0.28888889;
+			w = safeZoneW * 0.12604167;
+			h = safeZoneH * 0.025;
+			style = 0;
+			text = "";
+			colorBackground[] = {0.302,0.302,0.302,1};
+			colorText[] = {1,1,1,1};
+			font = "PuristaLight";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
+		class vehicle_info_points
+		{
+			type = 0;
+			idc = 7009;
+			x = safeZoneX + safeZoneW * 0.5225;
+			y = safeZoneY + safeZoneH * 0.52037038;
+			w = safeZoneW * 0.12604167;
+			h = safeZoneH * 0.025;
+			style = 0;
+			text = "";
+			colorBackground[] = {0.302,0.302,0.302,1};
+			colorText[] = {1,1,1,1};
+			font = "PuristaLight";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
+
 	};
 	
 };

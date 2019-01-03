@@ -4,3 +4,4 @@
 #include "player_menu.hpp"
     //stats
     #include "player_menu_stats.hpp"
+    #include "player_menu_vehicles.hpp"
