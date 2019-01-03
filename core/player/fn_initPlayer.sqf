@@ -25,4 +25,3 @@ currentObjective setMarkerColorLocal "ColorBlue";
 execvm "core\player\fn_jumpScript.sqf";
 
 [0, "CLIENT SET UP COMPLETE"] call mav_introcam_fnc_updateCinematicStatus;
-

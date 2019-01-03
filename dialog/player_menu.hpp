@@ -213,7 +213,7 @@ class chaos_player_menu
 			text = "images\player_menu\statistics.paa";
 			colorText[] = {1,1,1,1};
             colorBackground[] = {1,1,1,1};
-            tooltip = "Player Stats"
+            tooltip = "Player Stats";
 		};
 
 		class vehicles_picture : RscPicture
@@ -226,7 +226,7 @@ class chaos_player_menu
 			text = "\A3\Soft_F\MRAP_02\Data\UI\map_MRAP_02_CA.paa";
 			colorText[] = {1,1,1,1};
             colorBackground[] = {1,1,1,1};
-            tooltip = "Vehicle Menu"
+            tooltip = "Vehicle Menu";
 		};
 
         class admin_picture : RscPicture
@@ -239,7 +239,7 @@ class chaos_player_menu
 			text = "images\player_menu\admin.paa";
 			colorText[] = {1,1,1,1};
             colorBackground[] = {1,1,1,1};
-            tooltip = "Admin Menu"
+            tooltip = "Admin Menu";
 		};
 
         class empty1_picture : RscPicture
@@ -252,7 +252,7 @@ class chaos_player_menu
 			text = "";
 			colorText[] = {1,1,1,1};
             colorBackground[] = {1,1,1,1};
-            tooltip = ""
+            tooltip = "";
 		};
 
         class empty2_picture : RscPicture
@@ -265,7 +265,7 @@ class chaos_player_menu
 			text = "";
 			colorText[] = {1,1,1,1};
             colorBackground[] = {1,1,1,1};
-            tooltip = ""
+            tooltip = "";
 		};
 	};
 	
