@@ -29,7 +29,8 @@ class Admin {
     
     class Menu {
         file = "core\admin\menu";
-        class initRelocateObjectiveMenu {};
+        class adminmenu {};
+        class objectiverelocate {};
     }
 
 };
@@ -61,14 +62,14 @@ class Player {
     };
 
     class Menu {
-        file = "core\player\menu"
+        file = "core\player\menu";
         class initPlayerMenu {};
         class initStatsMenu {};
         class initVehicleMenu {};
     };
 
     class Hud {
-        file = "core\player\hud"
+        file = "core\player\hud";
         class hudCreate {};
         class hudUpdate {};
     };

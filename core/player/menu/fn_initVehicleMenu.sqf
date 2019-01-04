@@ -13,10 +13,29 @@ _playerVehiclePoints = profileNamespace getVariable "chaos_player_vehicle_points
 _ctrlVehiclePoints ctrlSetText format["Availiable Points: %1",_playerVehiclePoints];
 
 _vehicles = [
-	["O_MRAP_02_F","20"], //Ifrit
-	["B_MRAP_01_F", "20"], //Hunter
-	["I_MRAP_03_F","20"], //strider
-	["I_MRAP_03_hmg_F","1200"] //strider hmg
+	["O_MRAP_02_F",20], //Ifrit
+	["B_MRAP_01_F", 20], //Hunter
+
+	["I_MRAP_03_F",20], //strider
+	["I_MRAP_03_hmg_F",1200], //strider hmg
+
+	["B_T_LSV_01_unarmed_F",7], //Prowler
+	["B_T_LSV_01_unarmed_CTRG_F",7], //Prowler CTRG
+	["B_LSV_01_unarmed_black_F",7], //Prowler Black
+
+	["B_T_LSV_01_armed_F",175],//Prowler (Armed)
+	//["B_T_LSV_01_armed_CTRG_F",175],//Prowler (Armed) CTRG
+	["B_LSV_01_armed_black_F",175],//Prowler (Armed) Black
+
+	["O_T_LSV_02_armed_F",115],// Qilin (Armed) Green Hex
+	["O_LSV_02_armed_F",115],// Qilin (Armed) Hex
+	["O_T_LSV_02_armed_black_F",115],// Qilin (Armed) Black
+
+	["O_T_LSV_02_unarmed_F",7],// Qilin (Unarmed) Green Hex
+	["O_LSV_02_unarmed_F",7],// Qilin (Unarmed) Hex
+	["O_LSV_02_unarmed_black_F",7], // Qilin (Unarmed) Black
+
+	["O_MBT_02_cannon_F",5000] // T-100 Varsuk
 ];
 
 {	
@@ -25,7 +44,20 @@ _vehicles = [
 	_vehicleDisplayName = getText (configFile >> "CfgVehicles" >> _vehicleClassName >> 'displayName');
 	_add = _ctrlVehicleList lbAdd format["%1 (%2 Points)",_vehicleDisplayName,_vehicleCost];
 	_lbData = format["%1:%2",_vehicleClassName,_vehicleCost];
-	_ctrlVehicleList lbSetData[_add,_lbData]
+	_ctrlVehicleList lbSetData[_add,_lbData];
+	//Change Color of text depending on cost
+	//50 And below - white
+	if (_vehicleCost >= 0 ) then {
+		_ctrlVehicleList lbSetColor [_add, [1, 1, 1, 1]];
+	};
+	//50 - 250 - Purple
+	if (_vehicleCost >= 50 ) then {
+		_ctrlVehicleList lbSetColor [_add, [0.5,0,0.625,1]];
+	};
+	//250 - 5000 - Gold
+	if (_vehicleCost >= 250 ) then {
+		_ctrlVehicleList lbSetColor [_add, [1,0.843,0,1]];
+	};
 } forEach _vehicles;
 
 updateVehicleInfo = {
@@ -76,7 +108,8 @@ spawnvehicle = {
 		_playersChosenVehicle setVariable ["cost",_vehicleCost];
 		_playersChosenVehicle setVariable ["className",_vehicleClassName];
 		player setVariable ["activeVehicle",_playersChosenVehicle];
-		_playersChosenVehicle addEventHandler ["Killed","[] call vehiclerefund"]
+		_playersChosenVehicle addEventHandler ["Killed","[] call vehiclerefund"];
+		player moveInDriver _playersChosenVehicle;
 	} else {
 		hint "You do not have enough points to spawn this vehicle, you earn points by getting kills"
 	}

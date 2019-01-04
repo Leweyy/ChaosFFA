@@ -34,7 +34,12 @@ class chaos_player_menu_stats
 			h = safeZoneH * 0.025;
 			style = 0;
 			text = "Player Stats";
-			colorBackground[] = {0.9213,0.0634,0.0634,1};
+			colorBackground[] = {
+                "(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])",
+                "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])",
+                "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",
+                "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"
+            };
 			colorText[] = {1,1,1,1};
 			font = "PuristaLight";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.25);

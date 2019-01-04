@@ -44,9 +44,9 @@ class chaos_player_hud
 		{
 			type = CT_STATIC;
 			idc = 6403;
-			x = safeZoneX + safeZoneW * 0.29375;
+			x = safeZoneX + safeZoneW * 0.175;
 			y = safeZoneY + safeZoneH * 0.96388889;
-			w = safeZoneW * 0.41197917;
+			w = safeZoneW * 0.67916667;
 			h = safeZoneH * 0.02685186;
 			style = ST_CENTER;
 			text = "";

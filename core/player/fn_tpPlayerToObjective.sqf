@@ -9,7 +9,7 @@
 
 waitUntil{!isNil "currentObjective"};
 _markerPos = getMarkerPos currentObjective;
-_randomPos = [_markerPos, 25, 125, 0, 0, 0.7, 0, [], []] call BIS_fnc_findSafePos;
+_randomPos = [_markerPos, 0, 175, 0, 0, 0.9, 0, [], []] call BIS_fnc_findSafePos;
 
 //checks to see if player is in a vehicle
 if !(isNull objectParent player) then {
