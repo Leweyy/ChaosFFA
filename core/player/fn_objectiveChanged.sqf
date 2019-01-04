@@ -1,5 +1,11 @@
-hint format["Objective has been relocated to %1. Press [ENTER] to be teleported there", markerText currentObjective];
 waituntil {!isnull (finddisplay 46)};
+
+//just in case an eh is already present by spam relocating remove it
+[] call removeeh;
+
+// update users hud to reflect new objective
+[1] call player_fnc_hudUpdate;
+[2, format["Objective has been relocated to %1. Press [ENTER] to be teleported there", markerText currentObjective]] call player_fnc_hudUpdate;
 
 tpToNewObjHandler = (findDisplay 46) displayAddEventHandler ["KeyDown", {
     private ["_code","_shift","_ctrl","_alt","_success"];
@@ -14,6 +20,7 @@ tpToNewObjHandler = (findDisplay 46) displayAddEventHandler ["KeyDown", {
         case 28: {
             [] call Player_fnc_tpPlayerToObjective;
             [] call removeeh;
+            [2, ""] call player_fnc_hudUpdate;
             _success = true;
         };
     };
@@ -22,7 +29,9 @@ tpToNewObjHandler = (findDisplay 46) displayAddEventHandler ["KeyDown", {
 }];
 
 removeeh = {
-	tpToNewObjHandler = (findDisplay 46) displayRemoveEventHandler ["KeyDown", tpToNewObjHandler];
+    if (!isNil "tpToNewObjHandler") then {
+        tpToNewObjHandler = (findDisplay 46) displayRemoveEventHandler ["KeyDown", tpToNewObjHandler];
+    }
 };
 
-// *ToDo - update users hud to reflect new objective
+

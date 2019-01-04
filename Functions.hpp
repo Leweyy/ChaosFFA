@@ -67,6 +67,11 @@ class Player {
         class initVehicleMenu {};
     };
 
+    class Hud {
+        file = "core\player\hud"
+        class hudCreate {};
+        class hudUpdate {};
+    };
 };
 
 class Utils {

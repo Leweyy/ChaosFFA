@@ -15,12 +15,12 @@
 
 params ["_unit"];
 
-private _STAFF_UIDS = [
+_STAFF_UIDS = compileFinal '[
     "76561198130918050",
     "76561198121632932",
     "76561198301127636",
     "76561198095796413",
     "76561198053353709"
-];
+]';
 
-if (getPlayerUID _unit in _STAFF_UIDS || serverCommandAvailable '#kick' || !isMultiplayer) exitwith{true};
+if (getPlayerUID _unit in (call _STAFF_UIDS) || serverCommandAvailable '#kick' || !isMultiplayer) exitwith{true};

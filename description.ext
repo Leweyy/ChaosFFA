@@ -23,6 +23,7 @@ class CfgFunctions
 };
 
 class RscTitles 
-{
+{	
+	#include "dialog\player_hud.hpp"
 	#include "maverick\introcam\dialogs\title_status.hpp"
 }

@@ -11,3 +11,6 @@ waitUntil {mav_introcam_continue};
 
 //init main menu
 //[] call Lobby_fnc_initMainMenu
+
+//add hud after mav cam  
+[] call Player_fnc_hudCreate;

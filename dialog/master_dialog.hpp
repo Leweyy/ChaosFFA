@@ -5,3 +5,5 @@
     //stats
     #include "player_menu_stats.hpp"
     #include "player_menu_vehicles.hpp"
+
+#include "player_hud.hpp"
