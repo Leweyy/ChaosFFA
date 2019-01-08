@@ -20,4 +20,4 @@ mapanimloop = [] spawn {
 
 //add classes to treeview
 _customclassctrl = (findDisplay 6700) displayCtrl 6707; 
-[_customclassctrl,true] call cc_fnc_addClassesToCtrl;
+[_customclassctrl,false] call cc_fnc_addClassesToCtrl;

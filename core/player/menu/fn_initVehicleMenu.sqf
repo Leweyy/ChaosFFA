@@ -9,7 +9,7 @@ _ctrlVehiclePoints = _ctrl displayCtrl 7006;
 _ctrlSpawnVehicle = _ctrl displayCtrl 7004;
 _ctrlSpawnVehicle ctrlSetEventHandler ["MouseButtonClick", "[] call spawnvehicle"];
 _ctrlVehicleList ctrlAddEventHandler ["LBSelChanged","[] call updateVehicleInfo"];
-_playerVehiclePoints = profileNamespace getVariable "chaos_player_vehicle_points";
+_playerVehiclePoints = (["vehicle_points","get"] call player_fnc_stats);
 _ctrlVehiclePoints ctrlSetText format["Availiable Points: %1",_playerVehiclePoints];
 
 _vehicles = [
@@ -89,44 +89,58 @@ spawnvehicle = {
 	_vehicleClassName = (_data splitString ":") select 0;
 	_vehicleCost = parseNumber ((_data splitString ":") select 1);
 
-	_playerVehiclePoints = profileNamespace getVariable "chaos_player_vehicle_points";
+	_playerVehiclePoints = (["vehicle_points","get"] call player_fnc_stats);
+
 	if (isNil "_playerVehiclePoints") exitWith {hint "You dont have any vehicle points, you get 1 vehicle point for every kill"};
 	if (player distance lobby_menu_unit < 50) exitWith {hint "You cannot spawn a vehicle in spawn"};
+
 	if (_playerVehiclePoints >= _vehicleCost) then {
 		//set players new balance
-		_newPointBalance = _playerVehiclePoints - _vehicleCost;
-		profileNamespace setVariable ["chaos_player_vehicle_points",_newPointBalance];
+		["vehicle_points","remove",_vehicleCost] call player_fnc_stats;
 
 		//update balance on ui
 		_ctrlVehiclePoints = _display displayCtrl 7006;
-		_ctrlVehiclePoints ctrlSetText format["Availiable Points: %1",_newPointBalance];
+		_ctrlVehiclePoints ctrlSetText format["Availiable Points: %1",(["vehicle_points","get"] call player_fnc_stats)];
 
 		//spawn vehicle
+		_displayName = getText (configFile >> "CfgVehicles" >> _vehicleClassName >> 'displayName');
+
 		_playersChosenVehicle = _vehicleClassName createVehicle position player;
+
 		_playersChosenVehicle setVariable ["owner",getPlayerUID player];
 		_playersChosenVehicle setVariable ["createdAt",diag_tickTime];
 		_playersChosenVehicle setVariable ["cost",_vehicleCost];
 		_playersChosenVehicle setVariable ["className",_vehicleClassName];
-		player setVariable ["activeVehicle",_playersChosenVehicle];
-		_playersChosenVehicle addEventHandler ["Killed","[] call vehiclerefund"];
+		_playersChosenVehicle setVariable ["name",_displayName];
+
+		_playersChosenVehicle addEventHandler ["HandleDamage",{
+			params ["_vehicle", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint"];
+			//hint format["%1 | %2 | %3",_instigator, _projectile,_damage];
+			//Exit if vehicle was not killed by environment
+			if !(_instigator isEqualTo objNull) exitWith {};
+			// Exit if vehicle var is not populated
+			if (isNil "_vehicle" || _vehicle isEqualTo objNull) exitWith {};
+
+			if (_projectile in ["FuelExplosion","FuelExplosionBig"]) then {
+
+				_cost = _vehicle getVariable "cost";
+				_name = _vehicle getVariable "name";
+				_owner = _vehicle getVariable "owner";
+				_createdAt = _vehicle getVariable "createdAt";
+
+				hint format["Your %1 was destroyed and you have been refunded %2 points",_name,_cost];
+
+				["vehicle_points","add",_cost] call player_fnc_stats;
+
+				_vehicle removeEventHandler ["HandleDamage", 0];
+				deleteVehicle _vehicle;
+			}
+
+		}];
+
 		player moveInDriver _playersChosenVehicle;
+
 	} else {
 		hint "You do not have enough points to spawn this vehicle, you earn points by getting kills"
 	}
 };
-
-vehiclerefund = {
-
-	_vehicle = player getVariable "activeVehicle";
-	_refundAmount = _vehicle getVariable "cost";
-	_displayName = getText (configFile >> "CfgVehicles" >> (_vehicle getVariable "className") >> 'displayName');
-	hint format["You %1 was destroyed and you have been refunded %2 points",_displayName,_refundAmount];
-	_vp = profileNamespace getVariable "chaos_player_vehicle_points";
-	if (isNil "_vp") then {
-		_vp = 0
-	};
-	_vp = _vp + _refundAmount;
-	profileNamespace setVariable ["chaos_player_vehicle_points", _vp];
-
-	player setVariable ["activeVehicle",nil];
-}

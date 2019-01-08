@@ -131,7 +131,7 @@ class chaos_player_menu_vehicles
 			idc = 7006;
 			x = safeZoneX + safeZoneW * 0.45833334;
 			y = safeZoneY + safeZoneH * 0.25185186;
-			w = safeZoneW * 0.235;
+			w = safeZoneW * 0.24;
 			h = safeZoneH * 0.025;
 			style = 0;
 			text = "";

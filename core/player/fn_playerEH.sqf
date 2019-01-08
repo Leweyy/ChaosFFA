@@ -14,6 +14,8 @@ player addEventHandler ["Respawn", {
 	//init main menu
 	//[] call Lobby_fnc_initMainMenu
 
+	//re-add hud just incase 
+	[] call player_fnc_hudCreate
 }];
 
 player addEventHandler ["Killed", {
@@ -27,6 +29,7 @@ player addEventHandler ["Killed", {
 player addEventHandler ["Reloaded", {
     params ["_unit", "_weapon", "_muzzle", "_newMagazine", "_oldMagazine"];
 	_mag = _oldMagazine select 0;
+	player removeItem _mag;
     player addItem _mag;
 }];
 
@@ -37,28 +40,13 @@ addMissionEventHandler ["EntityKilled",
 	if (isNull _instigator) then {_instigator = _killer}; // player driven vehicle road kill
 
 	if (_killer isEqualTo player) then {
-		_pk = profileNamespace getVariable "chaos_player_kills";
-		if (isNil "_pk") then {
-			_pk = 0
-		};
-		_pk = _pk + 1;
-		profileNamespace setVariable ["chaos_player_kills", _pk];
+		["kills","add",1] call player_fnc_stats;
 
 		//addvehiclepoint
-		_vp = profileNamespace getVariable "chaos_player_vehicle_points";
-		if (isNil "_vp") then {
-			_vp = 0
-		};
-		_vp = _vp + 1;
-		profileNamespace setVariable ["chaos_player_vehicle_points", _vp];
+		["vehicle_points","add",1] call player_fnc_stats;
 	};
 	if (_killed isEqualTo player) then {
-		_pd = profileNamespace getVariable "chaos_player_deaths"; 
-		if (isNil "_pd") then { 
-			_pd = 0 
-		}; 
-		_pd = _pd + 1; 
-		profileNamespace setVariable ["chaos_player_deaths", _pd]
+		["deaths","add",1] call player_fnc_stats;
 	};
 }];
 

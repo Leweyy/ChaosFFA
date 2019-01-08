@@ -11,10 +11,10 @@ _ctrlKDRatio = _display displayCtrl 6906;
 _ctrlvehiclePoints = _display displayCtrl 6907;
 
 _name = format["%1 (%2)", name player, getPlayerUID player];
-_kills = format["Kills: %1", profileNamespace getVariable "chaos_player_kills"];
-_deaths = format["Deaths: %1", profileNamespace getVariable "chaos_player_deaths"];
-_kd = format["K/D Ratio: %1", ((profileNamespace getVariable "chaos_player_kills") / (profileNamespace getVariable "chaos_player_deaths")) toFixed 2];
-_vp = format["Vehicle Points: %1", profileNamespace getVariable "chaos_player_vehicle_points"];
+_kills = format["Kills: %1", (["kills","get"] call player_fnc_stats)];
+_deaths = format["Deaths: %1", (["deaths","get"] call player_fnc_stats)];
+_kd = format["K/D Ratio: %1", ((["kills","get"] call player_fnc_stats) / (["deaths","get"] call player_fnc_stats)) toFixed 2];
+_vp = format["Vehicle Points: %1", (["vehicle_points","get"] call player_fnc_stats)];
 
 _ctrlNameSteamID ctrlSetText _name;
 _ctrlKills ctrlSetText _kills;

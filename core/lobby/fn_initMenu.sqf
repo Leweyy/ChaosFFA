@@ -1,6 +1,7 @@
 private ["_unit"];
 
 _unit  = _this select 0;
+_unit setVariable ["name","dave"];
 //_unit addAction ["Custom Classes", { hint "This feature is not finished yet"; }, "",0,false,false,"","",15];
 _unit addAction ["Teleport", { [] call player_fnc_tpPlayerToObjective; }, "",0,false,false,"","",15];
 

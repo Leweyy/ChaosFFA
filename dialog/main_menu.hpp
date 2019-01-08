@@ -19,7 +19,7 @@ class chaos_main_menu
 			x = safeZoneX + safeZoneW * 0;
 			y = safeZoneY + safeZoneH * 0.025;
 			w = safeZoneW * 1;
-			h = safeZoneH * 0.95;
+			h = safeZoneH * 1;
 			style = 0;
 			text = "";
 			colorBackground[] = {0.502,0.502,0.502,1};
@@ -54,8 +54,12 @@ class chaos_main_menu
 			h = safeZoneH * 0.025;
 			style = 0;
 			text = "Main Menu";
-			colorBackground[] = {0.9213,0.0634,0.0634,1};
-			colorText[] = {1,1,1,1};
+			colorBackground[] = {
+                "(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])",
+                "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])",
+                "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",
+                "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"
+            };			colorText[] = {1,1,1,1};
 			font = "PuristaLight";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.25);
 			
@@ -86,8 +90,12 @@ class chaos_main_menu
 			h = safeZoneH * 0.025;
 			style = 0;
 			text = "";
-			colorBackground[] = {0.9213,0.0634,0.0634,1};
-			colorText[] = {1,1,1,1};
+			colorBackground[] = {
+                "(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])",
+                "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])",
+                "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",
+                "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"
+            };			colorText[] = {1,1,1,1};
 			font = "PuristaLight";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 			
@@ -134,7 +142,7 @@ class chaos_main_menu
 			w = safeZoneW * 0.0425;
 			h = safeZoneH * 0.02;
 			style = 0;
-			text = "Exit";
+			text = "Lobby";
 			borderSize = 0;
 			colorBackground[] = {0,0,0,1};
 			colorBackgroundActive[] = {1,0,0,1};

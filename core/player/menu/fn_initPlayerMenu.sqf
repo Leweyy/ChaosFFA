@@ -1,3 +1,6 @@
+//Exit is main menu is visable
+if (!isNull(findDisplay 6700)) exitWith {};
+
 if (isNull (findDisplay 6800)) then {
     if (!createDialog "chaos_player_menu") exitWith {hint "Menu Could not open";};
 };

@@ -6,17 +6,12 @@
     creates player hud
 
 */
+cutRsc ["chaos_player_hud","PLAIN"]; 
+disableSerialization; 
 
-cutRsc ["chaos_player_hud","PLAIN"];
-disableSerialization;
+((uiNamespace getVariable "chaos_player_hud") displayCtrl 6402) ctrlSetText (markerText currentObjective);
+((uiNamespace getVariable "chaos_player_hud") displayCtrl 6403) ctrlSetText "";
 
-waitUntil {!isNil "currentObjective"};
 
-_hudDisplay = uiNamespace getVariable "chaos_player_hud";
-_ctrlObjectivePicture = _hudDisplay displayCtrl 6401;
-_ctrlObjectiveName = _hudDisplay displayCtrl 6402;
-_ctrlNotification = _hudDisplay displayCtrl 6403;
 
-_ctrlObjectiveName ctrlSetText (markerText currentObjective);
-_ctrlNotification ctrlSetText "";
 

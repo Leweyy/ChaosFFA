@@ -24,7 +24,7 @@ params
 
 // Define server info
 uiNamespace setVariable ["redirectTimeout", diag_ticktime + 30];
-uiNamespace setVariable ["redirectInfo", ["172.93.108.194","2302"]];
+uiNamespace setVariable ["redirectInfo", ["s2.grandtheftarma.com","2302"]];
 
 onEachFrame {
 
@@ -64,6 +64,7 @@ onEachFrame {
                 onEachFrame {
                     diag_log 'Redirect Client > Stage 5 > Wait for server to show in list';
                     _ctrlServerList = (findDisplay 8) displayCtrl 102;
+                    sleep 10;
                     _data = _ctrlServerList lbData 0;
                     _data call {
                         _data = _this;
