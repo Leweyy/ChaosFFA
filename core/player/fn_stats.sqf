@@ -67,7 +67,6 @@ switch (_function) do {
 			_returnPlayerStat = 0;
 		};
 		player setVariable [_varName,_returnPlayerStat];
-		systemChat format["%1 | %2",_type,_returnPlayerStat];
 		_returnPlayerStat
 	};
 };

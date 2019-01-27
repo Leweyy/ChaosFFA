@@ -13,6 +13,7 @@ _conflictRebelIsland = _nodeList tvAdd [[],"Rebel Island"];
 _conflictSofia = _nodeList tvAdd [[],"Sofia"];
 _conflictNeochori = _nodeList tvAdd [[],"Neochori"];
 _conflictPyrgos = _nodeList tvAdd [[],"Pyrgos"];
+_miscNodes = _nodeList tvAdd [[],"Misc"];
 
 tvExpandAll _nodeList;
 
@@ -25,6 +26,8 @@ tvExpandAll _nodeList;
 	_containsStringPyrgos = ["pyrgos", _currMarker] call BIS_fnc_inString;
 	_containsStringRebel = ["rebelisland", _currMarker] call BIS_fnc_inString;
 	_containsStringNeochori = ["neochori", _currMarker] call BIS_fnc_inString;
+	_containsStringMisc = ["misc", _currMarker] call BIS_fnc_inString;
+
 	_icon = getText (configFile >> "CfgMarkers" >> "mil_unknown" >> "icon");
 
 	if(_containsStringSyrta) then {
@@ -77,6 +80,17 @@ tvExpandAll _nodeList;
 			_nodeList tvSetPictureColor [[4,_add], [1,0,0,1]];
 		}
 	};
+	if(_containsStringMisc) then {
+		_add = _nodeList tvAdd [[5],markerText _x];
+		_nodeList tvSetData [[5,_add],_x];
+		_nodeList tvSetPicture [[5,_add],_icon];
+		if (_currMarker == _currentObjective ) then {
+			_nodeList tvSetPictureColor [[5,_add], [0,0,1,1]];
+		} else {
+			_nodeList tvSetPictureColor [[5,_add], [1,0,0,1]];
+		}
+	};
+	
 } forEach _nodeMarkers;
 
 setObj = {
