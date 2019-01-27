@@ -1,6 +1,6 @@
-waitUntil {!(isNull (findDisplay 46))};
-
-createDialog "chaos_main_menu";
+if (isNull (findDisplay 6700)) then {
+    if (!createDialog "chaos_spawn_menu") exitWith {hint "Menu Could not open";};
+};
 
 waitUntil {!isNil "currentObjective"};
 waitUntil {!(isNull (findDisplay 6700))};
@@ -19,5 +19,8 @@ mapanimloop = [] spawn {
 };
 
 //add classes to treeview
-_customclassctrl = (findDisplay 6700) displayCtrl 6707; 
-[_customclassctrl,false] call cc_fnc_addClassesToCtrl;
+_customclassctrl = (findDisplay 6700) displayCtrl 6722; 
+[_customclassctrl,true] call cc_fnc_addClassesToCtrl;
+
+
+//Handle class items

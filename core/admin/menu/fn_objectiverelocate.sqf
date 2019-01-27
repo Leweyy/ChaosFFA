@@ -107,4 +107,6 @@ setObj = {
 	//_text = format["Objective has been relocated to %1",_selectedNodeName];
 	//[_text, "info", 3] call Utils_fnc_notification;
 
+    //diag_log format["%1 | Game Mode Loop | Admin Relocate | Objective set as %2 (%3)",missionName, markerText currentObjective, currentObjective];
+
 }

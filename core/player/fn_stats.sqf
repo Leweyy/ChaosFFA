@@ -62,15 +62,15 @@ switch (_function) do {
 		player setVariable [_varName,_playerStat];
 	};
 	case "get": {
-		returnPlayerStat = profileNamespace getVariable _varName;
-		if (isNil "returnPlayerStat") then {
-			returnPlayerStat = 0;
+		_returnPlayerStat = profileNamespace getVariable _varName;
+		if (isNil "_returnPlayerStat") then {
+			_returnPlayerStat = 0;
 		};
-		player setVariable [_varName,returnPlayerStat];
+		player setVariable [_varName,_returnPlayerStat];
+		systemChat format["%1 | %2",_type,_returnPlayerStat];
+		_returnPlayerStat
 	};
 };
-
-if (_function == "get") exitWith {returnPlayerStat};
 
 
 

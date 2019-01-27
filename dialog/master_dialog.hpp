@@ -1,5 +1,5 @@
 // Main menu/respawnmenu
-#include "main_menu.hpp"
+#include "spawn_menu.hpp"
 
 // playermenu
 #include "player_menu.hpp"

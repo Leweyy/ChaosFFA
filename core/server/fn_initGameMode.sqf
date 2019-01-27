@@ -9,7 +9,6 @@
      0: _preInit | Boolean - only to be used on server start up
 
 */
-
 _possibleObjectivePositions = [] call nodes_fnc_getNodes;
 _randomObjective = selectRandom _possibleObjectivePositions;
 
@@ -23,11 +22,13 @@ if !(isNil "currentObjective") then {
 currentObjective = _randomObjective;
 publicVariable "currentObjective";
 currentObjective setMarkerColor "ColorBlue";
+diag_log format["%1 | Game Mode Loop | Objective set as %2 (%3)",missionName, markerText currentObjective, currentObjective];
 
 sleep 300;
 
 if !(isNil "adminRelocated") then {
     if (adminRelocated isEqualTo true) then {
+        diag_log format["%1 | Game Mode Loop | Admin Relocate | Objective set as %2 (%3)",missionName, markerText currentObjective, currentObjective];
         sleep 300;
         adminRelocated = false;
         publicVariable "adminRelocated";

@@ -39,15 +39,25 @@ addMissionEventHandler ["EntityKilled",
 	if (isNull _instigator) then {_instigator = UAVControl vehicle _killer select 0}; // UAV/UGV player operated road kill
 	if (isNull _instigator) then {_instigator = _killer}; // player driven vehicle road kill
 
-	if (_killer isEqualTo player) then {
-		["kills","add",1] call player_fnc_stats;
+	//Player respawned
+	if ((_instigator isEqualTo player) && (_killed isEqualTo player)) exitWith {
+		["deaths","add",1] call player_fnc_stats;
+	} ;
 
+	//Player got a kill
+	if (_instigator isEqualTo player) then {
+		hint format["INSTIGATOR %1 | KILLED %2",_instigator,_killed];
+		["kills","add",1] call player_fnc_stats;
 		//addvehiclepoint
 		["vehicle_points","add",1] call player_fnc_stats;
 	};
+	
+	//Player got killed
 	if (_killed isEqualTo player) then {
 		["deaths","add",1] call player_fnc_stats;
 	};
+
+
 }];
 
 // attempt to watch currentObjective variable to init player teleport to new obj

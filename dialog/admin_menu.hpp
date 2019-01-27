@@ -1,7 +1,7 @@
 class chaos_admin_menu
 {
 	idd = 7800;
-	
+	onLoad = "if(!([player] call Admin_fnc_isPlayerAdmin))exitWith{closeDialog 0;};"
 	class ControlsBackground
 	{
 		class background
@@ -111,6 +111,38 @@ class chaos_admin_menu
 			sizeEx = (((((safezoneW/safezoneH) min 1.2)/1.2)/25)*1);
 			
 		};
+
+		class player_add_vehicle_points
+		{
+			type = 1;
+			idc = 7820;
+			x = safeZoneX + safeZoneW * 0.46510417;
+			y = safeZoneY + safeZoneH * 0.29537038;
+			w = safeZoneW * 0.0975;
+			h = safeZoneH * 0.02222223;
+			style = 0;
+			text = "Add 10 Vehicle Points";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,1};
+			colorBackgroundActive[] = {1,0,0,1};
+			colorBackgroundDisabled[] = {0.2,0.2,0.2,1};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0.2,0.2,0.2,1};
+			colorFocused[] = {0.2,0.2,0.2,1};
+			colorShadow[] = {0.302,0.302,0.302,1};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			offsetPressedX = 0;
+			offsetPressedY = 0;
+			offsetX = 0;
+			offsetY = 0;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1.0};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+		};
+
 		class server_options_title
 		{
 			type = 0;
@@ -130,8 +162,8 @@ class chaos_admin_menu
 			colorText[] = {1,1,1,1};
 			font = "PuristaLight";
 			sizeEx = (((((safezoneW/safezoneH)min 1.2)/1.2)/25)*1);
-			
 		};
+
 		class server_options_background
 		{
 			type = 0;
@@ -148,6 +180,7 @@ class chaos_admin_menu
 			sizeEx = (((((safezoneW/safezoneH)min 1.2)/1.2)/25)*1);
 			
 		};
+		
 		class server_objective_relocation
 		{
 			type = 1;
