@@ -41,7 +41,8 @@ switch (_function) do {
 		};
 		_playerStat = _playerStat + _amount;
 		profileNamespace setVariable [_varName,_playerStat];
-		player setVariable [_varName,_playerStat];
+		player setVariable [_varName,_playerStat,true];
+		//missionNamespace setVariable [format["%1_%2",getPlayerUID player, _varName],_playerStat]
 	};
 	case "remove": {
 		_playerStat = profileNamespace getVariable _varName;
@@ -50,7 +51,8 @@ switch (_function) do {
 		};
 		_playerStat = _playerStat - _amount;
 		profileNamespace setVariable [_varName,_playerStat];
-		player setVariable [_varName,_playerStat];
+		player setVariable [_varName,_playerStat,true];
+		//missionNamespace setVariable [format["%1_%2",getPlayerUID player, _varName],_playerStat]
 	};
 	case "reset": {
 		_playerStat = profileNamespace getVariable _varName;
@@ -59,15 +61,18 @@ switch (_function) do {
 		};
 		_playerStat = 0;
 		profileNamespace setVariable [_varName,_playerStat];
-		player setVariable [_varName,_playerStat];
+		player setVariable [_varName,_playerStat,true];
+		//missionNamespace setVariable [format["%1_%2",getPlayerUID player, _varName],_playerStat]
+
 	};
 	case "get": {
-		_returnPlayerStat = profileNamespace getVariable _varName;
-		if (isNil "_returnPlayerStat") then {
-			_returnPlayerStat = 0;
+		_playerStat = profileNamespace getVariable _varName;
+		if (isNil "_playerStat") then {
+			_playerStat = 0;
 		};
-		player setVariable [_varName,_returnPlayerStat];
-		_returnPlayerStat
+		player setVariable [_varName,_playerStat,true];
+		//missionNamespace setVariable [format["%1_%2",getPlayerUID player, _varName],_playerStat];
+		_playerStat
 	};
 };
 

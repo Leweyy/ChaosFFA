@@ -24,7 +24,7 @@ currentObjective setMarkerColorLocal "ColorBlue";
 //jump script
 execvm "core\player\fn_jumpScript.sqf";
 
-// update players variables by calling the get stats command, needed for admin menu
+// calling the stats function set the missionNamespace variables for the players stats on player join 
 ["vehicle_points","get"] call player_fnc_stats;
 ["kills","get"] call player_fnc_stats;
 ["deaths","get"] call player_fnc_stats;

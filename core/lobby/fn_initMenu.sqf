@@ -68,8 +68,8 @@ _availableUniforms = [
 ];
 
 _availableHeadgear = [
-"H_HelmetB_camo",
-"H_HelmetLeaderO_ocamo"
+	"H_HelmetB_camo",
+	"H_HelmetLeaderO_ocamo"
 ];
 
 [_unit,((backpackCargo _unit) + _availableBackpacks)] call BIS_fnc_addVirtualBackpackCargo;

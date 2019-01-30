@@ -55,7 +55,7 @@ class chaos_admin_menu_relocate_objective
 			w = safeZoneW * 0.165;
 			h = safeZoneH * 0.505;
 			style = 16;
-			colorBackground[] = {0.502,0.502,0.502,1}; // Fill color
+			colorBackground[] = {0.302,0.302,0.302,1}; // Fill color
 			colorSelect[] = {0.9213,0.0634,0.0634,1}; // Selected item fill color (when multiselectEnabled is 0)
 			colorMarked[] = {0.9213,0.0634,0.0634,1}; // Marked item fill color (when multiselectEnabled is 1)
 			colorMarkedSelected[] = {0.9213,0.0634,0.0634,1}; // Selected item fill color (when multiselectEnabled is 1)

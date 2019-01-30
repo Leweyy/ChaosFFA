@@ -12,6 +12,8 @@ disableSerialization;
 ((uiNamespace getVariable "chaos_player_hud") displayCtrl 6402) ctrlSetText (markerText currentObjective);
 ((uiNamespace getVariable "chaos_player_hud") displayCtrl 6403) ctrlSetText "";
 
+((uiNamespace getVariable "chaos_player_hud") displayCtrl 6401) ctrlShow false;
+
 
 
 

@@ -100,6 +100,9 @@ setObj = {
 	_selectedNodeMarkerId = _ctrl tvData _index;
 	_selectedNodeName = _ctrl tvText _index;
 
+	//Selection was not valid
+	if !(_selectedNodeMarkerId in (call Nodes_fnc_getNodes)) exitWith {};
+
 	if (adminRelocateTimer > diag_tickTime) exitWith {hint format["Wait %1 seconds before relocating objective again", adminRelocateTimer - diag_tickTime]};
 
 	adminRelocateTimer = diag_tickTime + 10;

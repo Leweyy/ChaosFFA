@@ -24,3 +24,5 @@ _STAFF_UIDS = compileFinal '[
 ]';
 
 if (getPlayerUID _unit in (call _STAFF_UIDS) || serverCommandAvailable '#kick' || !isMultiplayer) exitwith{true};
+
+false

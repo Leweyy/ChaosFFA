@@ -30,7 +30,7 @@ class chaos_player_hud
 			idc = 6402;
 			x = safeZoneX + safeZoneW * 0.00104167;
 			y = safeZoneY + safeZoneH * 0.97314815;
-			w = safeZoneW * 0.09010417;
+			w = safeZoneW * 0.12;
 			h = safeZoneH * 0.02685186;
 			style = 0;
 			text = "";

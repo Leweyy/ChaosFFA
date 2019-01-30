@@ -56,7 +56,12 @@ class chaos_admin_menu
 			style = 16;
 			colorBackground[] = {0.302,0.302,0.302,1};
 			colorDisabled[] = {0.2,0.2,0.2,1};
-			colorSelect[] = {1,0,0,1};
+			colorSelect[] = {
+                "(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])",
+                "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])",
+                "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])",
+                "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"
+            };
 			colorText[] = {1,1,1,1};
 			font = "PuristaMedium";
 			maxHistoryDelay = 0;
@@ -112,16 +117,52 @@ class chaos_admin_menu
 			
 		};
 
-		class player_add_vehicle_points
+		class player_options_vehicle_points_title
+		{
+			type = 0;
+			idc = 7820;
+			x = safeZoneX + safeZoneW * 0.465;
+			y = safeZoneY + safeZoneH * 0.28333334;
+			w = safeZoneW * 0.08645834;
+			h = safeZoneH * 0.025;
+			style = 0;
+			text = "Vehicle Points";
+			colorBackground[] = {0.302,0.302,0.302,1};
+			colorText[] = {1,1,1,1};
+			font = "PuristaLight";
+			sizeEx = (((((safezoneW/safezoneH)min 1.2)/1.2)/25)*1);
+			
+		};
+
+		class player_options_vehicle_points_amount
+		{
+			type = 2;
+			idc = 7821;
+			x = safeZoneX + safeZoneW * 0.465;
+			y = safeZoneY + safeZoneH * 0.31;
+			w = safeZoneW * 0.06979167;
+			h = safeZoneH * 0.025;
+			style = 0;
+			text = "";
+			autocomplete = "";
+			colorBackground[] = {0,0,0,1};
+			colorDisabled[] = {0.2,0.2,0.2,1};
+			colorSelection[] = {1,0,0,1};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
+		class player_options_vehicle_points_add_button
 		{
 			type = 1;
-			idc = 7820;
-			x = safeZoneX + safeZoneW * 0.46510417;
-			y = safeZoneY + safeZoneH * 0.29537038;
-			w = safeZoneW * 0.0975;
-			h = safeZoneH * 0.02222223;
-			style = 0;
-			text = "Add 10 Vehicle Points";
+			idc = 7822;
+			x = safeZoneX + safeZoneW * 0.54;
+			y = safeZoneY + safeZoneH * 0.31;
+			w = safeZoneW * 0.03489584;
+			h = safeZoneH * 0.025;
+			style = 2;
+			text = "add";
 			borderSize = 0;
 			colorBackground[] = {0,0,0,1};
 			colorBackgroundActive[] = {1,0,0,1};
@@ -141,6 +182,69 @@ class chaos_admin_menu
 			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
 			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
 			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			
+		};
+		class player_options_vehicle_points_remove_button
+		{
+			type = 1;
+			idc = 7823;
+			x = safeZoneX + safeZoneW * 0.58;
+			y = safeZoneY + safeZoneH * 0.31;
+			w = safeZoneW * 0.035;
+			h = safeZoneH * 0.025;
+			style = 2;
+			text = "remove";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,1};
+			colorBackgroundActive[] = {1,0,0,1};
+			colorBackgroundDisabled[] = {0.2,0.2,0.2,1};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0.2,0.2,0.2,1};
+			colorFocused[] = {0.2,0.2,0.2,1};
+			colorShadow[] = {0.302,0.302,0.302,1};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			offsetPressedX = 0;
+			offsetPressedY = 0;
+			offsetX = 0;
+			offsetY = 0;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1.0};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			
+		};
+		class player_options_vehicle_points_reset_button
+		{
+			type = 1;
+			idc = 7824;
+			x = safeZoneX + safeZoneW * 0.62;
+			y = safeZoneY + safeZoneH * 0.31;
+			w = safeZoneW * 0.03489584;
+			h = safeZoneH * 0.025;
+			style = 2;
+			text = "reset";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,1};
+			colorBackgroundActive[] = {1,0,0,1};
+			colorBackgroundDisabled[] = {0.2,0.2,0.2,1};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0.2,0.2,0.2,1};
+			colorFocused[] = {0.2,0.2,0.2,1};
+			colorShadow[] = {0.302,0.302,0.302,1};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			offsetPressedX = 0;
+			offsetPressedY = 0;
+			offsetX = 0;
+			offsetY = 0;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1.0};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			
 		};
 
 		class server_options_title

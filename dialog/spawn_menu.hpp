@@ -251,7 +251,7 @@ class chaos_spawn_menu
 			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
 			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
 			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
-			onButtonClick = "['end1',false] call BIS_fnc_endMission;";
+			onButtonClick = "['end1',false,0.01] call BIS_fnc_endMission;";
 		};
 		class classes_items_list
 		{

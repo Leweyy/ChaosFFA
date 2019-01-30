@@ -42,7 +42,7 @@ if (_donator isEqualTo true) then {
 
 	//add class names
 	_add = _ctrl tvAdd [[],_className];
-	_ctrl tvSetData [[],_classId];
+	_ctrl tvSetData [[_forEachIndex],_classId];
 	
 	//if loadout is default dont bother doing the rest
 	if !(_classLoadout isEqualTo _defaultClass) then {
